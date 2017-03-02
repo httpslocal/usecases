@@ -1,6 +1,6 @@
-# Second Screen Community Group
+# HTTPS in Local Network Community Group
 
-This repository is being used for work in the W3C Second Screen Community Group, governed by the
+This repository is being used for work in the HTTPS in Local Network Community Group, governed by the
 [W3C Community License Agreement (CLA)](http://www.w3.org/community/about/agreements/cla/).
 
 To make substantive contributions, you must join the Community Group.
