@@ -63,3 +63,52 @@ if she usually posts photos to the online service from her smartphone directly, 
 
 ![uc06](figs/uc06.jpg)
 
+# Use Case Analysis
+
+- #T.B.D.
+    - Network environment: a local network and/or a global network
+    - Certificate issuer: public CA / corporate or organizational CA / private CA
+    - Privacy scope: public / per service or device manufacturer / private
+
+# Requirements for HTTPS/WSS in Local Network
+
+This section collects requirements derived from use cases listed above.
+
+## <a name="req-01"></a>REQ-01: Device Discovery
+
+- The UA (the web browser mentioned in the use cases above) shall be able to securely discover the presence of HTTPS/WSS server capable devices (hereinafter just called 'device') that are connected to the local network. 
+- A secure context loaded from the internet to the UA (hereinafter just called 'secure context') should also be able to discover target device capabilities that are actively (e.g., turned on) connected to the local network (e.g., device type, identity of a set of Web APIs, and so on).
+- A secure context shall be able to get access to the locally discovered device based on the user consent.
+- If there are multiple devices in local network, the UA shall be able to provide the user with a way to select one device at a time which she intends to use on the secure context.
+- etc. 
+	
+## <a name="req-02"></a>REQ-02: Mutual authentication between device and secure context
+
+- The secure context must have a way to verify whether the device to which it tries getting access is reliable or not.
+- The device should have a way to verify whether the origin of the secure context which tries getting access to the device is reliable or not.
+- etc. 
+
+## <a name="req-03"></a>REQ-03: Issuing TLS server certificate for device
+
+(Are there any solution to realize the use cases above without issuing a TLS server certificate to the device ?)
+
+- The device must have a way to get a server certificate which the UA can trust after connecting to the local network because an IP address and a domain name of a device in local network is changeable.
+- The device must have a way to verify the server certificate issuer’s trust.
+- A server certificate issuer for devices (hereinafter called 'Device CA') must have a way to verify whether the target device is eligible for having a server certificate or not.
+- The device should have a cryptographically secure way to keep the private key of the server certificate secret.
+- The server certificate for the device should be issued without manual configuration by the user because local network (e.g., home network, small office network) usually does not have any network administrators.
+- etc.
+
+## <a name="req-04"></a>REQ-04: Cross-origin access from secure context to device
+
+- The UA shall be able to allow secure contexts to get access to HTTPS/WSS server capable devices in local network based on user granting authorization to the device.
+- The device in local network should be able to accept access requests from secure contexts based on user granting authorization.
+- etc.
+
+## <a name="req-05"></a>REQ-05: Managing (reissuing and revoking) TLS server certificate for device
+
+(note to self. There haven't been use cases for the requirements yet but we will have to discuss this topic eventually.)
+
+- The UA shall be able to revoke access privilege for the secure context to the device if the user decides to do that.
+- The UA should be able to revoke access privilege for the secure context to the device if the UA finds out the device has already become insecure, is malicious or is vulnerable (based on user granting authorization).
+- etc.
