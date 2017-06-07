@@ -63,13 +63,6 @@ if she usually posts photos to the online service from her smartphone directly, 
 
 ![uc06](figs/uc06.jpg)
 
-# Use Case Analysis
-
-- #T.B.D.
-    - Network environment: a local network and/or a global network
-    - Certificate issuer: public CA / corporate or organizational CA / private CA
-    - Privacy scope: public / per service or device manufacturer / private
-
 # Requirements for HTTPS/WSS in Local Network
 
 This section collects requirements derived from use cases listed above.
