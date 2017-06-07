@@ -90,9 +90,9 @@ This section collects requirements derived from use cases listed above.
 
 ## <a name="req-03"></a>REQ-03: Issuing TLS server certificate for device
 
-(Are there any solution to realize the use cases above without issuing a TLS server certificate to the device ?)
+NOTE: Are there any solution to realize the use cases above without issuing a TLS server certificate to the device ?
 
-- The device must have a way to get a server certificate which the UA can trust after connecting to the local network because an IP address and a domain name of a device in local network is changeable.
+- The device must have a way to get a server certificate which the UA can trust after connecting to the local network because an IP address and a domain name of a device in local network is subject to change.
 - The device must have a way to verify the server certificate issuer’s trust.
 - A server certificate issuer for devices (hereinafter called 'Device CA') must have a way to verify whether the target device is eligible for having a server certificate or not.
 - The device should have a cryptographically secure way to keep the private key of the server certificate secret.
@@ -107,7 +107,7 @@ This section collects requirements derived from use cases listed above.
 
 ## <a name="req-05"></a>REQ-05: Managing (reissuing and revoking) TLS server certificate for device
 
-(note to self. There haven't been use cases for the requirements yet but we will have to discuss this topic eventually.)
+NOTE: There haven't been use cases for the requirements yet but we will have to discuss this topic eventually.
 
 - The UA shall be able to revoke access privilege for the secure context to the device if the user decides to do that.
 - The UA should be able to revoke access privilege for the secure context to the device if the UA finds out the device has already become insecure, is malicious or is vulnerable (based on user granting authorization).
