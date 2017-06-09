@@ -73,6 +73,7 @@ This section collects requirements derived from use cases listed above.
 - A secure context loaded from the internet to the UA (hereinafter just called 'secure context') should also be able to discover target device capabilities that are actively (e.g., turned on) connected to the local network (e.g., device type, identity of a set of Web APIs, and so on).
 - A secure context shall be able to get access to the locally discovered device based on the user consent.
 - If there are multiple devices in local network, the UA shall be able to provide the user with a way to select one device at a time which she intends to use on the secure context.
+- The list of devices in local network must not be exposed directly to web applications. The UA must provide web applicatons with only information or interface to the device selected by a user.
 - etc. 
 	
 ## <a name="req-02"></a>REQ-02: Mutual authentication between device and secure context
