@@ -63,6 +63,12 @@ if she usually posts photos to the online service from her smartphone directly, 
 
 ![uc06](figs/uc06.jpg)
 
+## UC-07: Secure offline communication for home automation
+
+A user sets up a home automation gateway is under normal circumstances using HTTPS to securely accept commands via a remote server.
+In some cases the gateways internet connection is interrupted but local communication between a wall mounted control surface, app, or similar should stil be given.
+This becomes very important when we consider that devices that can be controlled this way include door locks and security cameras.
+
 # Requirements for HTTPS/WSS in Local Network
 
 This section collects requirements derived from use cases listed above.
