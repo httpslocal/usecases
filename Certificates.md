@@ -3,9 +3,9 @@
 To realize HTTPS/WSS communication in local network, especially between UAs and devices, we have to consider the types of TLS server certificates issued to the devices and go through the pros and cons of each type.
 
 ## Index
-- Public CA Certificate
-- Self-signed Certificate
-- Private CA Certificate
+- [Public CA Certificate](#Public-CA-Certificate)
+- [Self-signed Certificate](#Self-signed-Certificate)
+- [Private CA Certificate](#Private-CA-Certificate)
  
 ## Public CA Certificate
 
@@ -35,7 +35,7 @@ To realize HTTPS/WSS communication in local network, especially between UAs and 
     - A UA cannot get acccess to the device when the upstream internet connection is down.
     - The domain name of the device is disclosed globally because it must be registered in public DNS servers.
 
-## Self-signed Certificate (for the devices accessible only in local network)
+## Self-signed Certificate
 
 (TODO: consider whether the certificate can be acceptable in terms of security.)
 
@@ -51,7 +51,7 @@ To realize HTTPS/WSS communication in local network, especially between UAs and 
 - Cons
     - UA implementation has to be extented to regard the certificates as trusted ones.
 
-### Private CA Certificate (for the devices accessible only in local network)
+## Private CA Certificate
 
 - How to issue
     1. Issued by a private certificate authority for devices (device CA) explicitly granted by the user.
