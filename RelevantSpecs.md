@@ -19,7 +19,8 @@ Any proposals for addition, clarification and improvement are absolutely welcome
     unauthenticated connections in the context of an encrypted and authenticated document.
 - WHATWG Living Standards
   - [Fetch Living Standard](https://fetch.spec.whatwg.org):
-    describes Cross-Origin Resource Sharing (CORS) specification integrated into algorithms.
+    describes Cross-Origin Resource Sharing (CORS) specification integrated into fetch
+    algorithms.
 
 ## Service Discovery
 
