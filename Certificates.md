@@ -3,9 +3,9 @@
 To realize HTTPS/WSS communication in local network, especially between UAs and devices, we have to consider the types of TLS server certificates issued to the devices and go through the pros and cons of each type.
 
 ## Index
-- [Public CA Certificate](#Public-CA-Certificate)
-- [Self-signed Certificate](#Self-signed-Certificate)
-- [Private CA Certificate](#Private-CA-Certificate)
+- [Public CA Certificate](#public-ca-certificate)
+- [Self-signed Certificate](#self-signed-certificate)
+- [Private CA Certificate](#private-ca-certificate)
  
 ## Public CA Certificate
 
