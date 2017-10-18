@@ -8,6 +8,20 @@ For details and further discussion, please refer to
 [the corresponding issue in GitHub](https://github.com/httpslocal/usecases/issues/7).
 Any proposals for addition, clarification and improvement are absolutely welcome.
 
+## Security Infrastructure
+
+- W3C Web Application Security WG
+  - [Secure Contexts](https://w3c.github.io/webappsec-secure-contexts/):
+    defines “secure contexts”, which user agent implementers and specification authors
+    to allow minimum features of which authentication and confidentiality are met.
+  - [Mixed Context](https://w3c.github.io/webappsec-mixed-content/):
+    describes how a user agent should handle fetching of content over unencrypted or
+    unauthenticated connections in the context of an encrypted and authenticated document.
+- WHATWG Living Standards
+  - [Fetch Living Standard](https://fetch.spec.whatwg.org):
+    describes Cross-Origin Resource Sharing (CORS) specification integrated into fetch
+    algorithms.
+
 ## Service Discovery
 
 - W3C Second Screen CG
@@ -37,7 +51,15 @@ TBA
 
 ## Authentication and Authorization
 
+- W3C Web Authentication WG
+  - [Web Authentication: An API for accessing Public Key Credentials Level 1](https://w3c.github.io/webauthn/):
+    defines an API enabling the creation and use of strong, attested, scoped,
+    public key-based credentials by web applications, for the purpose of strongly
+    authenticating users.
 - IETF
+  - [The OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749):
+    defines procedures for how to enable a third-party application to obtain
+    limited access to an HTTP service.
   - [OAuth 2.0 Device Flow for Browserless and Input Constrained Devices](https://tools.ietf.org/html/draft-ietf-oauth-device-flow-06):
     proposes an authorization flow for browserless and input constrained devices
     like smart TV, media console, picture frame, printer, etc.
