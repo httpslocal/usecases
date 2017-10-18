@@ -17,8 +17,9 @@ Any proposals for addition, clarification and improvement are absolutely welcome
   - [Mixed Context](https://w3c.github.io/webappsec-mixed-content/):
     describes how a user agent should handle fetching of content over unencrypted or
     unauthenticated connections in the context of an encrypted and authenticated document.
-  - [Cross-Origin Resource Sharing](https://www.w3.org/TR/cors/) (CORS):
-    defines a mechanism to enable client-side cross-origin requests.
+- WHATWG Living Standards
+  - [Fetch Living Standard](https://fetch.spec.whatwg.org):
+    describes Cross-Origin Resource Sharing (CORS) specification integrated into algorithms.
 
 ## Service Discovery
 
