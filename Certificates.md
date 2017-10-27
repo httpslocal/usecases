@@ -8,6 +8,7 @@ To realize HTTPS/WSS communication in local network, especially between UAs and 
 - [Public CA Certificate](#public-ca-certificate)
 - [Private CA Certificate](#private-ca-certificate)
 - [Self-signed Certificate](#self-signed-certificate)
+- [References](#references)
 
 ## Terminology
 
