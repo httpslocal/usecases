@@ -16,7 +16,7 @@ To realize HTTPS/WSS communication in local network, especially between UAs and 
 - Device: HTTPS/WSS server-capable device in local network.
 - Public CA: CA (Certificate Authority) which issues server certificates to the devices. The certificates (hereafter, Public CA certificates) can chain up to root CAs which are regarded as the trusted ones by the UA.
 - Private CA: CA (Certificate Authority) which issues server certificates to the devices. The certificates (hereafter, Private CA certificates) can not chain up to the root CAs. Ideally, the CA issues a PSK or a certificate for the device's bootstrapping to the device manufacturer in advance and issues the certificates by verifying the pre-issued credential.
-- Web application: Web application which gets access to the device via its frontend running on the UA in local network. There is a case that it takes the CA role mentioned above.
+- Web application: Web apprication wich gets access to the device via its frontend running on the UA in local network. There is a case that it takes the CA role mentioned above.
 
 ## Public CA Certificate
 
@@ -38,7 +38,6 @@ To realize HTTPS/WSS communication in local network, especially between UAs and 
 - How to issue
     1. A kind of delegation method inspired on [Delegated Credentials](https://tools.ietf.org/html/draft-rescorla-tls-subcerts-00) or [STAR Certificates](https://tools.ietf.org/html/draft-ietf-acme-star-01)
         - (TODO: develop the system to issue this type of certificates and confirm the feasibility.)
-        ![https_start](figs/https_star.jpg)
     1. The method of [PLEX](https://blog.filippo.io/how-plex-is-doing-https-for-all-its-users/).
     1. etc.
 - Pros
@@ -87,3 +86,4 @@ To realize HTTPS/WSS communication in local network, especially between UAs and 
 - [Use of Short-Term, Automatically-Renewed (STAR) Certificates to Delegate Authority over Web Sites](https://tools.ietf.org/html/draft-ietf-acme-star-00)
 - [".local" Server Certificate for HTTPS migration on local network](https://www.w3.org/wiki/images/3/37/2016.w3c.breakout_session.dot-local-server-cert.p.pdf)
 - [CORS and RFC1918](https://wicg.github.io/cors-rfc1918/)
+
