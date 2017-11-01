@@ -1,6 +1,6 @@
 # Network based API via HTTPS in local network
 
-This document summarizes how HTTPS local in local network can mitigate the security risk on Network based API.
+This document summarizes how HTTPS in local network can mitigate the security risk on Network based API.
 
 ## Network based API
 Network based API is a type of API(Application Programing Interface) which is provided via the network interface of 'localhost' server on a device. A web application can communicate with the device and its peripherals via Networked based APIs instead of JavaScript APIs natively supported by browsers.
@@ -24,6 +24,6 @@ HTTP Local Network Community Group has been discussed the use case and the requi
 [1] [https://facebook.github.io/react-vr/docs/getting-started.html](https://facebook.github.io/react-vr/docs/getting-started.html)  
 [2] [https://www.w3.org/TR/vehicle-information-api/](https://www.w3.org/TR/vehicle-information-api/)  
 [3]
-[https://en.wikipedia.org/wiki/Browser_security#Plugins_and_extensions](https://en.wikipedia.org/wiki/Browser_security#Plugins_and_extensions)
+[https://en.wikipedia.org/wiki/Browser_security#Plugins_and_extensions](https://en.wikipedia.org/wiki/Browser_security#Plugins_and_extensions)  
 [4]
 [https://www.w3.org/TR/secure-contexts/](https://www.w3.org/TR/secure-contexts/)
