@@ -37,7 +37,10 @@ To realize HTTPS/WSS communication in local network, especially between UAs and 
 
 - How to issue
     1. A kind of delegation method inspired on [Delegated Credentials](https://tools.ietf.org/html/draft-rescorla-tls-subcerts-00) or [STAR Certificates](https://tools.ietf.org/html/draft-ietf-acme-star-01)
-        - (TODO: develop the system to issue this type of certificates and confirm the feasibility.)
+        - An example of the STAR solution is as follows.
+
+        ![local_star](figs/local_star.jpg)
+
     1. The method of [PLEX](https://blog.filippo.io/how-plex-is-doing-https-for-all-its-users/).
     1. etc.
 - Pros
@@ -86,4 +89,3 @@ To realize HTTPS/WSS communication in local network, especially between UAs and 
 - [Use of Short-Term, Automatically-Renewed (STAR) Certificates to Delegate Authority over Web Sites](https://tools.ietf.org/html/draft-ietf-acme-star-00)
 - [".local" Server Certificate for HTTPS migration on local network](https://www.w3.org/wiki/images/3/37/2016.w3c.breakout_session.dot-local-server-cert.p.pdf)
 - [CORS and RFC1918](https://wicg.github.io/cors-rfc1918/)
-
