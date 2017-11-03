@@ -6,8 +6,8 @@ via HTTP and/or WebSocket over TLS, for the purpose of clarifying network and se
 If you find another use case, please submit a Pull Request to add it to [UseCases.md](UseCases.md), or add your comment
 to relevant GitHub issues.
 
-The following are the documents derived from the discussions on the use cases. Please also add your comment on the documents.
+The following are the documents derived from the discussions on the use cases. Please also submit a Pull Request, or add your comment.
 
-* [Requiremens.md](Requirements.md) - functional and non-functional requirements of HTTPS in local network
-* [RelevantSpecs.md](RelevantSpecs.md) - existing specifications and drafts relevant to HTTPS in local network
-* [Certificates.md](Certificates.md) - types of server certificate used for HTTPS in local network
+* [Requiremens.md](Requirements.md) - functional and non-functional requirements of HTTPS/WSS in local network
+* [RelevantSpecs.md](RelevantSpecs.md) - existing specifications and drafts relevant to HTTPS/WSS in local network
+* [Certificates.md](Certificates.md) - types of server certificate used for HTTPS/WSS in local network
