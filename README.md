@@ -9,5 +9,5 @@ to relevant GitHub issues.
 The following are the documents derived from the discussions on the use cases. Please also add your comment on the documents.
 
 * [Requiremens.md](Requirements.md) - functional and non-functional requirements of HTTPS in local network
-* [RelevantSpecs.md](s.md) - existing specifications and drafts relevant to HTTPS in local network
+* [RelevantSpecs.md](RelevantSpecs.md) - existing specifications and drafts relevant to HTTPS in local network
 * [Certificates.md](Certificates.md) - types of server certificate used for HTTPS in local network
