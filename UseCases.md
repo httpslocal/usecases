@@ -40,7 +40,7 @@ The engineer makes the device display a specific website as a signage content by
 After that, the website is monitoring the status of the embedded system (e.g. collecting logs, monitoring system resource utilization)
 continuously via the browser by using internal REST APIs provided by an internal web server (e.g. https://localhost) of the device.
 If the device provides the website with reboot functionality as one of the REST APIs, the service provider is able to not only check
-the health of the device, if necessary, but also reboot the device remotely via the website.
+the health of the device, if necessary, but also reboot the device remotely via the website. This use case is about Network based API described in [NetworkedBasedAPI.md](NetworkBasedAPI.md)
 
 ![uc04](figs/uc04.jpg)
 
