@@ -18,7 +18,7 @@ Network based API is more safety than plugins and extensions because a malicious
 
 ## HTTPS in local network
 If HTTPS can be used for Network based API, browsers can verify an origin of 'localhost' server  as well as secure origins on the web. Browsers can also restrict a particular origin of the Network based API if a critical security vulnerability of the  server has not been fixed. It should be noted that a 'localhost' server is regarded as potentially trustworthy in the W3C SecureContexts[[4]](https://www.w3.org/TR/secure-contexts/) but  browsers can not verify its origin.  
-HTTP Local Network Community Group has been discussed the use case and the requirements to use HTTPS in local network. We hope that a solution which meet the requirements would mitigate the security risk of Network Based API. Also, Networked based API will become more extensible by hosting a server not only on 'localhost' interface but also on local network. It should be noted that application-level authentication over HTTPS is valuable for access control.
+HTTPS in Local Network Community Group has been discussed the use cases and the requirements to use HTTPS in local network. We hope that a solution for the "HTTPS in Local Network" would mitigate the security risk of Network Based API. Also, Networked based API will become more extensible by hosting a server not only on 'localhost' interface but also on local network. It should be noted that application-level authentication over HTTPS is valuable for access control.
 
 ## References
 [1] [https://facebook.github.io/react-vr/docs/getting-started.html](https://facebook.github.io/react-vr/docs/getting-started.html)  
