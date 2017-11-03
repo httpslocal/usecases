@@ -5,7 +5,7 @@ This document summarizes how HTTPS in local network can mitigate the security ri
 ## Network based API
 Network based API is a type of API(Application Programing Interface) which is provided via the network interface of 'localhost' server on a device. A web application can communicate with the device and its peripherals via Networked based APIs instead of JavaScript APIs natively supported by browsers.
 For example, React VR uses a Network based API to communicate with Oculus Rift connected to PC or Mac  [[1]](https://facebook.github.io/react-vr/docs/getting-started.html).
-W3C(World Wide Web Consortium) has been publishing the standards of JavaScript APIs. Recently, some of groups in W3C work on the standardization of Network based API instead of JavaScript APIs. For example, the Automotive Working Group discusses on Vehicle Information API Specification [[2]](https://www.w3.org/TR/vehicle-information-api/).
+W3C(World Wide Web Consortium) has been publishing the standards of JavaScript APIs. Recently, some of groups in W3C work on the standardization of Network based API instead of JavaScript APIs. For example, the Automotive Working Group discusses on Vehicle Information Service Specification [[2]](https://w3c.github.io/automotive/vehicle_data/vehicle_information_service.html).
 
 ## Plugins and extensions
 In past, browser plugins and extensions have been well used as a way to extend features and capabilities of browsers. Because of the security concern on browser plugin as described in the Wiki page [[3]](https://en.wikipedia.org/wiki/Browser_security#Plugins_and_extensions), nowadays, major browser vendors let a user to install browser plugin only thru their marketplaces, though a user can still install a third-party extension at its own risk.
@@ -22,7 +22,7 @@ HTTP Local Network Community Group has been discussed the use case and the requi
 
 ## References
 [1] [https://facebook.github.io/react-vr/docs/getting-started.html](https://facebook.github.io/react-vr/docs/getting-started.html)  
-[2] [https://www.w3.org/TR/vehicle-information-api/](https://www.w3.org/TR/vehicle-information-api/)  
+[2] [https://w3c.github.io/automotive/vehicle_data/vehicle_information_service.html/](https://w3c.github.io/automotive/vehicle_data/vehicle_information_service.html)  
 [3]
 [https://en.wikipedia.org/wiki/Browser_security#Plugins_and_extensions](https://en.wikipedia.org/wiki/Browser_security#Plugins_and_extensions)  
 [4]
