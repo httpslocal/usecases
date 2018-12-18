@@ -1,0 +1,254 @@
+<pre class='metadata'>
+Title: Use Cases and Requirements on HTTPS-enabled Local Network Servers
+Shortname: httpslocal-usecases-requirements
+Level: 1
+Status: CG-DRAFT
+Group: httpslocal
+URL: https://httpslocal.github.io/usecases/
+Editor: Contributors on GitHub, https://github.com/httpslocal/usecases/graphs/contributors
+Abstract: This document describes use cases of HTTPS-enabled local network servers and requirements for their HTTPS deployment.
+Repository: https://github.com/httpslocal/usecases
+Markup Shorthands: markdown yes
+</pre>
+
+Introduction {#intro}
+=====================
+
+This document describes use cases where browsers communicate with
+web-server-capable devices in local network via HTTP (`https://`) and/or
+WebSocket over TLS (`wss://`), as well as network, security, and privacy
+requirements on these usage.
+
+Nowadays, a lot of devices like Internet-of-Things (IoT) devices and home
+gateways often have their own built-in HTTP server so that they can provide
+interfaces to configure and/or control them remotely via IPv4/IPv6 local
+network. Modern web browsers, however, usually regard those local servers as not
+trustworthy due to lack of authenticity of device's identity. As a result,
+browsers would prevent trustworthy web sites from communicating to local network
+devices [[MIXED-CONTENT]] and prohibit web pages on the servers from accessing
+powerful features on browsers [[SECURE-CONTEXTS]].
+
+Therefore, this document illustrates potential use cases that need access to
+local network servers and clarifies requirements for use of these servers.
+
+Use cases {#usecases}
+=====================
+
+## UC-01: Playing audio content in a home storage device from a cloud service ## {#uc-01}
+
+Users can store their audio contents in their storage device, or set-top boxes,
+in their home. They access online music web services with web browsers, and use
+a music player implemented as a web application in the web services to play
+music stored in their home network. The music player send metadata of the music
+to the web service, to recommend another music content.
+
+## UC-02: Video streaming with cache storage in local network ## {#uc-02}
+
+A user has a video cache storage server for home to enjoy online video streaming
+services at UHDTV quality. When she opens the web site of one of the streaming
+services on her TV browser, the web page tries to find her cache storage and
+displays a list of storages via a popup window. She picks up one storage from
+the list to store caches of UHDTV video stream segments. After her permission,
+the streaming web application of the service can start prefetching or fetching
+UHDTV movies purchased or bookmarked by her and upload those segments to the
+storage. When she wants to watch one of the movies cached in the storage, the
+online service fetches the movie from the home storage to avoid consuming WAN
+traffic, and finally she can comfortably enjoy the movie.
+
+<figure id="fig-uc02"><img src="figs/uc02.jpg"></figure>
+
+## UC-03: Web-based UI for home appliances (input/output constrained devices) ## {#uc-03}
+
+A user controls home appliances (e.g. air conditioner, microwave oven,
+refrigerator) with an online GUI service on the internet. The home appliances
+are designed natively to be used via the online GUI loaded in a browser on her
+smartphone or tablet. As with the use cases mentioned above, when she signs in
+to the online service, the service finds a home appliance through the browser.
+Under her approval, the service can be granted access privileges for the
+appliance and she can control it through the GUI service.
+
+<figure id="fig-uc03"><img src="figs/uc03.jpg"></figure>
+
+## UC-04: Embedded system monitoring and controlling for display-capable devices ## {#uc-04}
+
+A field engineer of a digital signage service provider sets up an
+internet-capable display device. The engineer makes the device display a
+specific website as a signage content by using a browser on the device. After
+that, the website is monitoring the status of the embedded system (e.g.
+collecting logs, monitoring system resource utilization) continuously via the
+browser by using internal REST APIs provided by an internal web server (e.g.
+https://localhost) of the device. If the device provides the website with reboot
+functionality as one of the REST APIs, the service provider is able to not only
+check the health of the device, if necessary, but also reboot the device
+remotely via the website. This use case is about Network based API described in
+NetworkedBasedAPI.md
+
+<figure id="fig-uc04"><img src="figs/uc04.jpg"></figure>
+
+## UC-05: Data analysis from analytical and measuring instruments in local network ## {#uc-05}
+
+An analytical and measuring instrument in local network outputs a large amount
+of raw data as the result of an experiment. An experimenter (a user of the
+instrument) signs in to a web-based analytical service provided by the vender of
+the instrument by using a browser in her PC. The experimenter analyzes the raw
+data by using the web service and the service fetches the raw data from the
+instrument directly in local network.
+
+<figure id="fig-uc05"><img src="figs/uc05.jpg"></figure>
+
+## UC-06: Photo sharing between online services and home NAS devices ## {#uc-06}
+
+A user usually stores her private photos and videos in a home NAS device. She
+opens an online photo sharing service in a browser on her smartphone. The online
+service finds her home NAS device through the browser and shows her the NAS via
+a popup window. She selects the NAS and the browser shows her private photos in
+the NAS as well as the ones already stored in the online service. She then
+selects and posts some photos that she would like to share with her friends or,
+if she usually posts photos to the online service from her smartphone directly,
+she downloads the photos and posts them to the NAS device.
+
+<figure id="fig-uc06"><img src="figs/uc06.jpg"></figure>
+
+## UC-07: Secure offline communication for home automation ## {#uc-07}
+
+A user sets up a home automation gateway is under normal circumstances using
+HTTPS to securely accept commands via a remote server. In some cases the
+gateways internet connection is interrupted but local communication between a
+wall mounted control surface, app, or similar should stil be given. This becomes
+very important when we consider that devices that can be controlled this way
+include door locks and security cameras.
+
+## UC-08: Companion Device for Broadcast Interactive Service ## {#uc-08}
+
+A user is watching a broadcast interactive service which is enhanced by a
+broadcaster’s web app running on the user agent of TV. The user hands a
+companion device, e.g. Smartphone, and launches a user agent with the Frontend
+page from the broadcaster web server. The Frontend page discovers the user-agent
+of TV and securely communicates with the broadcaster’s web application via the
+Web Socket Server on TV in order to provide GUI for the interactive broadcast
+service. Note that this use case is similar to the 2-UA of the Presentation API
+but the difference is that the broadcaster’s web application on TV is running on
+UA of TV in advance.
+
+<figure id="fig-uc08"><img src="figs/uc08.jpg"></figure>
+
+## UC-09: Presenting with Projector at office ## {#uc-09}
+
+A user is attending a meeting at office (outside home). The user logs on an
+online document sharing service on PC and present his document file on the
+service with the Projector connected via local network. FrontEnd page on UA1 at
+PC initiates to launch 2nd frontend page on 2nd UA at the projector to let the
+2nd frontend page present the document. Note that this use case is similar to
+2-UA of Presentation API but the communication between 2-UA should be secured to
+prevent the MITM attack in the local network and also the regular WebSocket API
+is used for the communication, e.g. file transfer.
+
+<figure id="fig-uc09"><img src="figs/uc09.jpg"></figure>
+
+Requirements {#requirements}
+============================
+
+This section outlines functional and non-functional requirements of HTTPS/WSS
+usage in local network represented in [[#usecases]].
+
+Functional requirements consist of device discovery, device identification,
+certificate issuance, and certificate management and lifecycle.
+
+Non-functional requirements address user experience and security aspects of
+HTTPS/WSS usage in local network.
+
+Issue: Currently this document only describes the requirements for the use
+cases where the UA and the device communicates within the local network.
+Additional cases where the UA communicates with the device via a gateway in the
+public IP address scope is being discussed in
+[the GitHub issue #13](https://github.com/httpslocal/usecases/issues/13).
+
+## Functional Requirements ## {#req-functional}
+
+### Terminology ### {#req-terminology}
+
+A <dfn>device</dfn> is in the same local network as the user agent (UA), capable
+of HTTPS/WSS server, compliant with [=certificate grant and issuance=] and
+[=certificate management=], and notifies the UA of the capability during
+[=device discovery=].
+
+A <dfn>pre-installed certificate</dfn> is a self-signed server certificate
+statically installed in the [=device=].
+
+A <dfn>device CA</dfn> is a certificate authority, and issues a short-term self-signed
+server certificate to a [=device=] authenticated by the UA.
+
+### <dfn>Device Discovery</dfn> ### {#req-device-discovery}
+
+- The UA shall be able to discover the presence of [=devices=] in the same local
+    network.
+- The UA shall be able to obtain the endpoint URL of the [=device=] which has
+    the scheme `https:` or `wss:` and its compliance with
+    [=certificate grant and issuance=] and [=certificate management=].
+
+### <dfn>Device Identification</dfn> ### {#req-device-identification}
+
+- To identify the [=device=] as the [discovered](#req-device-discovery) one
+    explicitly selected by the user, the UA shall authenticate it before
+    granting or issuing a certificate for the [=device=].
+- The UA shall ask the user to input information to identify the [=device=] when
+    the [=device=] requests to do so, and notify the [=device=] of the
+    information, so that the UA and the [=device=] can properly authenticate
+    with each other.
+  - Information to identify may be one of the following forms: PIN code or
+    passphrase displayed or labeled on the [=device=], NFC tag, etc.
+- The UA shall only expose the interface to the authenticated device to web
+    applications.
+- The UA shall initiate [=certificate grant and issuance=] procedure when the
+    [=device=] is identified properly.
+
+### <dfn>Certificate Grant and Issuance</dfn> ### {#req-certificate-grant-and-issuance}
+
+- The [=device=] shall be able to have at least one of the following types of
+    TLS server certificates so that an origin of the connection with the
+    [=device=] becomes
+    [potentially trustworthy](https://w3c.github.io/webappsec-secure-contexts/#potentially-trustworthy-origin)
+    in a certain period:
+    - a [=pre-installed certificate=] granted on the web application’s origin
+	- a certificate issued by the [=device CA=]
+- If the web server allows the UA to grant the [=pre-installed certificate=] of
+    the [=device=] in its web application’s origin, the web server shall be able
+    to provide the UA with a hint about the certificate to be granted.
+- If the [=device=] requires a certificate issued by the [=device CA=], the
+    [=device=] shall request the [=device CA=] to issue a certificate for the
+    [=device=] when the user grants.
+- The [=device CA=] shall verify certificate issuing request from both the
+    [=device=] and the UA before issuing a certificate to the [=device=].
+- The certificate shall have a reasonably short expiration period.
+
+### <dfn>Certificate Management</dfn> ### {#req-certificate-management}
+
+- The UA shall ask the user if the user grants the renewal of the certificate
+    when the certificate is expired during [=device identification=],
+    [=certificate grant and issuance=], or communication with the [=device=].
+- The UA shall be able to revoke the certificate when the user decides to do so.
+- The certificate issued by the [=device CA=] shall be able to be revoked by the
+    [=device CA=] when necessary.
+
+## Non-Functional Requirements ## {#req-non-funcational-requirements}
+
+### Privacy and Security ### {#req-privacy-and-security}
+
+- [=Device identification=] and [=certificate grant and issuance=] should
+    prevent passive network eavesdroppers from learning messages related to
+    identification or certificate passed between the UA and the device.
+- [=Device identification=] and [=certificate grant and issuance=] should
+    prevent active network attackers from impersonating a device and observing
+    or altering data intended for the UA.
+
+### User Experience ### {#req-user-experience}
+
+- The UA should minimize user’s interaction for [=device identification=] as
+    much as possible.
+- The procedure of [=certificate grant and issuance=] should be automated as
+    much as possible so that the user’s interaction can be minimized.
+
+<pre class="biblio">
+{
+}
+</pre>
