@@ -111,12 +111,26 @@ she downloads the photos and posts them to the NAS device.
 
 ## UC-07: Secure offline communication for home automation ## {#uc-07}
 
-A user sets up a home automation gateway is under normal circumstances using
-HTTPS to securely accept commands via a remote server. In some cases the
-gateways internet connection is interrupted but local communication between a
-wall mounted control surface, app, or similar should stil be given. This becomes
-very important when we consider that devices that can be controlled this way
-include door locks and security cameras.
+A user wants to set up a new home device (e.g., a Wi-Fi access point/router,
+home automation gateway) in his/her home using the device web interface.
+User typically connects the device with a laptop or a smartphone and then
+launches a given URL (e.g., https://home-router.local, or https://192.168.1.1)
+on the laptop or smart phone’s web browser. Since the new device does not have
+a valid web PKI certificate, the web browser displays a warning that typically
+says, “The connection is not secure” but provides an option to the user to
+approve the access or add the URL as an exception to the access list.
+Once user takes the action, the web browser treats the device as a trusted one
+and does not display the warning in subsequent attempts. Additionally, if the
+home device supports functionality such as, SSO (Single Sign On) the user can
+use an identity (ID) provider's account (e.g., Google, Facebook, and so on)
+to sign in the device’s web interface and provide the needed trust.
+
+Similar secure access is required when a home gateway, which is typically
+controlling other home devices (e.g., door locks, security cameras), uses HTTPS
+for securely accepting commands via a remote server gets temporarily disconnected
+from the Internet. In such scenarios, a local HTTPS communication from user’s
+local device (e.g., smart phone or a control device) is essential to control
+and operate the home device.
 
 ## UC-08: Companion Device for Broadcast Interactive Service ## {#uc-08}
 
