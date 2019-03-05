@@ -128,7 +128,7 @@ to sign in the device’s web interface and provide the needed trust.
 Similar secure access is required when a home gateway, which is typically
 controlling other home devices (e.g., door locks, security cameras), uses HTTPS
 for securely accepting commands via a remote server gets temporarily disconnected
-from the Internet. In such scenarios, a local HTTPS communication from user’s
+from the internet. In such scenarios, a local HTTPS communication from user’s
 local device (e.g., smart phone or a control device) is essential to control
 and operate the home device.
 
