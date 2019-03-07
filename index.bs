@@ -112,8 +112,8 @@ she downloads the photos and posts them to the NAS device.
 ## UC-07: Secure offline communication for home automation ## {#uc-07}
 
 A user wants to set up a new home device (e.g., a Wi-Fi access point/router,
-home automation gateway) in his/her home using via its web interface.
-User typically opens a given URL (e.g., https://home-router.local, or https://192.168.1.1)
+home automation gateway) in his/her home via its web interface.
+User typically opens a given URL for the device (e.g., https://home-router.local, or https://192.168.1.1)
 in a laptop or smart phone’s web browser. Since the new device does not have
 a valid web PKI certificate, the web browser displays a warning like 
 “The connection is not secure” but provides an option to ask the user to
