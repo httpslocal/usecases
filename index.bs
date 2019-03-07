@@ -163,9 +163,7 @@ Additional cases where the UA communicates with the device via a gateway in the
 public IP address scope is being discussed in
 [the GitHub issue #13](https://github.com/httpslocal/usecases/issues/13).
 
-## Functional Requirements ## {#req-functional}
-
-### Terminology ### {#req-terminology}
+## Terminology ## {#req-terminology}
 
 A <dfn>device</dfn> is in the same local network as the user agent (UA), capable
 of HTTPS/WSS server, compliant with [=certificate grant and issuance=] and
@@ -177,6 +175,8 @@ statically installed in the [=device=].
 
 A <dfn>device CA</dfn> is a certificate authority, and issues a short-term self-signed
 server certificate to a [=device=] authenticated by the UA.
+
+## Functional Requirements ## {#req-functional}
 
 ### <dfn>Device Discovery</dfn> ### {#req-device-discovery}
 
