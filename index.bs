@@ -212,7 +212,7 @@ The functional requirements are:
 
 In the following, we elaborate on individual requirements as mentioned above.
 
-### <dfn>Guarantee of Device Trustworthiness</dfn> ### {#req-guarantee-of-device-trustworthiness}
+### Guarantee of Device Trustworthiness ### {#req-guarantee-of-device-trustworthiness}
 
 The [=UA=] accesses the [=device=] with TLS (HTTPS or WSS) in all of the use cases envisioned so far.
 If the [=UA=] cannot trust the [=device=]’s TLS server certificate,
@@ -237,8 +237,8 @@ however, the [=device=] and/or the [=UA=] shall have one of the following featur
 
 ### <dfn>Device Identification</dfn> ### {#req-device-identification}
 
-In case that the user inputs the device URL to the address bar of the [=UA=] directly ([[uc-07]])
-or the [=UA=] shows the popup window to the user to get the user's approval ([[uc-02]], [[uc-03]]),
+In case that the user inputs the device URL to the address bar of the [=UA=] directly ([[#uc-07]])
+or the [=UA=] shows the popup window to the user to get the user's approval ([[#uc-02]], [[#uc-03]]),
 the user may be able to recognize that the device URL displayed or input on the [=UA=]
 indicates the real device on the local network. In such cases, the [=device=] and/or
 the [=UA=] shall meet the following requirements:
@@ -248,7 +248,7 @@ the [=UA=] shall meet the following requirements:
     interface (e.g., pushing a specific button on the [=device=] to start the pairing,
     showing the PIN code for the pairing on the [=device=]’s display).
 
-### <dfn>Alerting User and User's Approval</dfn> ### {#req-alerting-user}
+### Alerting User and User's Approval ### {#req-alerting-user}
 
 The [=web service=] loaded on the [=UA=] should not be able to access the [=device=]
 without an explicit approval from the user especially during its first time access.
@@ -263,17 +263,17 @@ Therefore, considering the [=UA=] shall meet the following requirement:
     the [=UA=] shall have a way to obtain user’s approval to trust an alternative identifier
     (e.g., [=non-Web PKI certificate=], PSK, RPK).
 
-### <dfn>Certificate Management</dfn> ### {#req-certificate-management}
+### Certificate Management ### {#req-certificate-management}
 
 When the [=device=] obtains a TLS server certificate for HTTPS/WSS communication,
-the CA, [=UA=] and the [=device=] shall meet the following requirements:
-- The CA that issues certificates for [=device=]s shall be able to revoke the certificates.
+the [=CA=], [=UA=] and the [=device=] shall meet the following requirements:
+- The [=CA=] that issues certificates for [=device=]s shall be able to revoke the certificates.
 - The [=UA=] shall be able to detect the revocation of the [=device=]’s certificate.
 - The [=device=] shall be able to refresh the certificate at any time.
 
 ### <dfn>Device Discovery</dfn> ### {#req-device-discovery}
 
-As described in [[uc-02]] and [[uc-03]], when the [=web service=] does not know the device URL in advance,
+As described in [[#uc-02]] and [[#uc-03]], when the [=web service=] does not know the device URL in advance,
 the [=device=] needs to be discovered. That means the discovery process must meet the following requirements:
 - The [=UA=] shall be able to discover the presence of [=device=]s in the same local network.
 - The [=UA=] shall be able to obtain the endpoint URL of the [=device=] that has the scheme `https://` or `wss://`.
@@ -298,7 +298,7 @@ Following security considerations are important:
     exchanged among the system components (the CA, the [=device=], the [=UA=] and the [=web service=]).
 - If the [=device=] uses a TLS server certificate for HTTPS/WSS communication,
     the certificate issuance and renewal steps shall prevent active network attackers
-    from impersonating a [=device=] and observing or altering data intended for the CA or for the [=UA=].
+    from impersonating a [=device=] and observing or altering data intended for the [=CA=] or for the [=UA=].
 - If the [=device=] does not use a TLS server certificate, alternate steps for the [=UA=]
     to initiate a TLS session to the [=device=] (e.g., sharing and using a PSK or a RPK)
     shall prevent passive network eavesdroppers from getting the PSK or the private key of the RPK.
@@ -310,7 +310,7 @@ Following security considerations are important:
     passive network eavesdroppers from learning information related to identification.
 - [=Device identification=] and [=device discovery=]  (if the [=UA=] supports it) shall prevent
     active network attackers from impersonating a [=device=] and observing or altering
-    data intended for the CA or for the [=UA=].
+    data intended for the [=CA=] or for the [=UA=].
 
 ### Privacy ### {#req-privacy}
 
@@ -328,7 +328,7 @@ the [=UA=] and the [=device=] shall meet the following requirements:
 
 ### Availability ### {#req-availability}
 
-In scenarios (e.g., [[uc-07]]) when the [=device=] and the [=UA=] gets temporarily disconnected from the internet,
+In scenarios (e.g., [[#uc-07]]) when the [=device=] and the [=UA=] gets temporarily disconnected from the internet,
 the [=UA=] and the [=device=] should be able to communicate with each other on the local network.
 Therefore, the [=device=] and the local network system shall meet the following requirements:
 - When the [=device=] has a private domain name (e.g., *.local, *.home.arpa)
@@ -344,7 +344,7 @@ the number of certificates required will be significantly larger than the total 
 of certificates exists today for public web servers.
 Therefore, following exemption may be required:
 - If the [=device=] uses a [=Web PKI certificate=] for HTTPS/WSS communication,
-    the CA should be exempt to preserve CT (certificate transparency) logs for the [=device=]s.
+    the [=CA=] should be exempt to preserve CT (certificate transparency) logs for the [=device=]s.
 
 ### User Experience ### {#req-user-experience}
 
