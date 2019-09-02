@@ -167,17 +167,11 @@ This section outlines functional and non-functional requirements of HTTPS/WSS
 usage in local network represented in [[#usecases]].
 
 Functional requirements consist of guarantee of device trustworthiness,
-device identification, alerting user and user’s approval, device discovery,
+device identification, alerting user and user consent, device discovery,
 and certificate management.
 
 Non-functional requirements address security, privacy, availability, scalability,
 and user experience aspects of HTTPS/WSS usage in local network.
-
-Issue: Currently this document only describes the requirements for the use
-cases where the UA and the device communicates within the local network.
-Additional cases where the UA communicates with the device via a gateway in the
-public IP address scope is being discussed in
-[the GitHub issue #13](https://github.com/httpslocal/usecases/issues/13).
 
 ## Terminology ## {#req-terminology}
 
@@ -186,14 +180,14 @@ and so on, which is connected to a local network.
 
 A <dfn>device</dfn> is in the same local network as the [=UA=], capable of HTTPS/WSS server.
 
-A <dfn>web service</dfn> is hosted on the internet and whose frontend page is
+A <dfn>web service</dfn> is a service hosted on the internet and whose frontend is
 loaded on the [=UA=], which accesses to the [=device=] with HTTPS or WSS on the local network.
 
 A <dfn>Web PKI certificate</dfn> is a TLS server certificate that can chain up to
 a root CA (Certificate Authority) trusted by the [=UA=]  (preinstalled on the [=UA=]).
 
 A <dfn>non-Web PKI certificate</dfn> is a TLS server certificate that cannot chain
-up to the root CA, or a self-signed certificate.
+up to a root CA, or a self-signed certificate.
 
 A <dfn>CA</dfn> (merely called `CA` in this document) is a CA responsible for issuing the [=Web PKI certificate=]s or [=non-Web PKI certificate=]s.
 It is not restricted to a CA responsible only for issuing the [=Web PKI certificate=]s.
@@ -202,12 +196,12 @@ A <dfn>private CA</dfn> is a CA responsible for issuing the [=non-Web PKI certif
 
 ## Functional Requirements ## {#req-functional}
 
-The functional requirements are:
+The functional requirements are listed below:
 
 - Guarantee of Device Trustworthiness
 - Device Identification
-- Alerting User and User’s Approval
-- Certificate Managemen
+- Alerting User and User Consent
+- Certificate Management
 - Device Discovery
 
 In the following, we elaborate on individual requirements as mentioned above.
@@ -220,7 +214,7 @@ the [=UA=] shows a warning message that means the [=device=] cannot be trusted.
 To avoid it, the [=device=] shall have a way to prove its trustworthiness to the [=UA=].
 
 Getting a [=Web PKI certificate=] is one of the ways to prove the [=device=] trustworthiness
-but the [=Web PKI certificate=] is only work for globally unique domains,
+but the [=Web PKI certificate=] only works for globally unique domains,
 which must be registered in public DNS servers. For this scenario, the requirement is that
 - The [=device=] has a [=Web PKI certificate=] and has a way to obtain it.
 
@@ -238,7 +232,7 @@ however, the [=device=] and/or the [=UA=] shall have one of the following featur
 ### <dfn>Device Identification</dfn> ### {#req-device-identification}
 
 In case that the user inputs the device URL to the address bar of the [=UA=] directly ([[#uc-07]])
-or the [=UA=] shows the popup window to the user to get the user's approval ([[#uc-02]], [[#uc-03]]),
+or the [=UA=] shows the popup window to the user to get the user's consent ([[#uc-02]], [[#uc-03]]),
 the user may be able to recognize that the device URL displayed or input on the [=UA=]
 indicates the real device on the local network. In such cases, the [=device=] and/or
 the [=UA=] shall meet the following requirements:
@@ -248,19 +242,19 @@ the [=UA=] shall meet the following requirements:
     interface (e.g., pushing a specific button on the [=device=] to start the pairing,
     showing the PIN code for the pairing on the [=device=]’s display).
 
-### Alerting User and User's Approval ### {#req-alerting-user}
+### Alerting User and User Consent ### {#req-alerting-user}
 
-The [=web service=] loaded on the [=UA=] should not be able to access the [=device=]
+The frontend of the [=web service=]  loaded on the [=UA=] should not be able to access the [=device=]
 without an explicit approval from the user especially during its first time access.
 This is essential in cases where the [=device=] is not capable of using a [=Web PKI certificate=].
 In such cases, the [=UA=] will possibly use an alternative identifier (e.g., [=non-Web PKI certificate=], PSK, RPK)
-but it must not be trusted without the user’s approval.
+but it must not be trusted without the user’s consent.
 Therefore, considering the [=UA=] shall meet the following requirement:
-- When the [=web service=] requests the [=UA=] to access the [=device=] in local network,
-    the [=UA=] shall show a popup window to obtain the user’s approval and shall permit
+- When the frontend of the [=web service=] requests the [=UA=] to access the [=device=] in local network,
+    the [=UA=] shall show a popup window to obtain the user’s consent and shall permit
     the access only if the user approve the access.
 - When the [=device=] does not use a [=Web PKI certificate=] for HTTPS/WSS communication,
-    the [=UA=] shall have a way to obtain user’s approval to trust an alternative identifier
+    the [=UA=] shall have a way to obtain user’s consent to trust an alternative identifier
     (e.g., [=non-Web PKI certificate=], PSK, RPK).
 
 ### Certificate Management ### {#req-certificate-management}
@@ -282,7 +276,7 @@ the [=device=] needs to be discovered. That means the discovery process must mee
 
 ## Non-Functional Requirements ## {#req-non-funcational-req}
 
-The non-functional requirements are:
+The non-functional requirements are listed below:
 - Security
 - Privacy
 - Availability
@@ -291,7 +285,7 @@ The non-functional requirements are:
 
 ### Security ### {#req-security}
 
-Following security considerations are important:
+It is essential to take care of the following security considerations:
 - If the [=device=] uses a TLS server certificate for HTTPS/WSS communication,
     the certificate issuance and renewal steps shall prevent passive network
     eavesdroppers from learning information related to the identification or certificate
@@ -315,7 +309,7 @@ Following security considerations are important:
 ### Privacy ### {#req-privacy}
 
 The user privacy shall be preserved against the [=web service=] especially when the user
-allows the [=web service=] to access the [=device=] for private use.  In such scenarios,
+allows the frontend of the [=web service=] to access the [=device=] for private use.  In such scenarios,
 the [=UA=] and the [=device=] shall meet the following requirements:
 - When the [=UA=] supports [=device discovery=] functionality mentioned above and the [=UA=] finds
     multiple [=device=]s, [=UA=] shall disclose only one [=device=] selected by the user.
