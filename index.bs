@@ -31,6 +31,28 @@ powerful features on browsers [[SECURE-CONTEXTS]].
 Therefore, this document illustrates potential use cases that need access to
 local network servers and clarifies requirements for use of these servers.
 
+Terminology ## {#terminology}
+=======
+
+A user agent (<dfn>UA</dfn>) is a web browser on a user’s PC, smartphone, tablet
+and so on, which is connected to a local network.
+
+A <dfn>device</dfn> is in the same local network as the [=UA=], capable of HTTPS/WSS server.
+
+A <dfn>web service</dfn> is a service hosted on the internet and whose frontend is
+loaded on the [=UA=], which accesses to the [=device=] with HTTPS or WSS on the local network.
+
+A <dfn>Web PKI certificate</dfn> is a TLS server certificate that can chain up to
+a root CA (Certificate Authority) trusted by the [=UA=]  (preinstalled on the [=UA=]).
+
+A <dfn>non-Web PKI certificate</dfn> is a TLS server certificate that cannot chain
+up to a root CA, or a self-signed certificate.
+
+A <dfn>CA</dfn> (merely called `CA` in this document) is a CA responsible for issuing the [=Web PKI certificate=]s or [=non-Web PKI certificate=]s.
+It is not restricted to a CA responsible only for issuing the [=Web PKI certificate=]s.
+
+A <dfn>private CA</dfn> is a CA responsible for issuing the [=non-Web PKI certificate=]s.
+
 Use cases {#usecases}
 =====================
 
@@ -172,27 +194,6 @@ and certificate management.
 
 Non-functional requirements address security, privacy, availability, scalability,
 and user experience aspects of HTTPS/WSS usage in local network.
-
-## Terminology ## {#req-terminology}
-
-A user agent (<dfn>UA</dfn>) is a web browser on a user’s PC, smartphone, tablet
-and so on, which is connected to a local network.
-
-A <dfn>device</dfn> is in the same local network as the [=UA=], capable of HTTPS/WSS server.
-
-A <dfn>web service</dfn> is a service hosted on the internet and whose frontend is
-loaded on the [=UA=], which accesses to the [=device=] with HTTPS or WSS on the local network.
-
-A <dfn>Web PKI certificate</dfn> is a TLS server certificate that can chain up to
-a root CA (Certificate Authority) trusted by the [=UA=]  (preinstalled on the [=UA=]).
-
-A <dfn>non-Web PKI certificate</dfn> is a TLS server certificate that cannot chain
-up to a root CA, or a self-signed certificate.
-
-A <dfn>CA</dfn> (merely called `CA` in this document) is a CA responsible for issuing the [=Web PKI certificate=]s or [=non-Web PKI certificate=]s.
-It is not restricted to a CA responsible only for issuing the [=Web PKI certificate=]s.
-
-A <dfn>private CA</dfn> is a CA responsible for issuing the [=non-Web PKI certificate=]s.
 
 ## Functional Requirements ## {#req-functional}
 
