@@ -31,8 +31,15 @@ powerful features on browsers [[SECURE-CONTEXTS]].
 Therefore, this document illustrates potential use cases that need access to
 local network servers and clarifies requirements for use of these servers.
 
-Terminology ## {#terminology}
-=======
+Terminology {#terminology}
+==========================
+
+In this document, we refer to **HTTPS** as a scheme which uses TLS as a method
+for ensuring confidentiality of its content and identification/authentication of the
+counterpart of the communication. This means, the scope of the term HTTPS in this document
+is not limited to the `https://` scheme but also includes WebSocket over TLS (`wss://`) and other
+schemes that operate in a similar way. Whenever there is a need to disambiguate so that the term
+specifies the `https://` scheme only, the document will indicate so.
 
 A user agent (<dfn>UA</dfn>) is a web browser on a user’s PC, smartphone, tablet
 and so on, which is connected to a local network.
