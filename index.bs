@@ -34,9 +34,9 @@ local network servers and clarifies requirements for use of these servers.
 Terminology {#terminology}
 ==========================
 
-In this document, we refer to **HTTPS** as a scheme which uses TLS as a method
-for ensuring confidentiality of its content and identification/authentication of the
-counterpart of the communication. This means, the scope of the term HTTPS in this document
+In this document, we refer to **HTTPS** as a scheme of communication allowed by the browser
+which uses TLS as a method for ensuring confidentiality of its content and identification/authentication
+of the counterpart of the communication. This means, the scope of the term HTTPS in this document
 is not limited to the `https://` scheme but also includes WebSocket over TLS (`wss://`) and other
 schemes that operate in a similar way. Whenever there is a need to disambiguate so that the term
 specifies the `https://` scheme only, the document will indicate so.
