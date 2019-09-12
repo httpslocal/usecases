@@ -2,7 +2,7 @@
 Title: Use Cases and Requirements on HTTPS-enabled Local Network Servers
 Shortname: httpslocal-usecases-requirements
 Level: 1
-Status: CG-DRAFT
+Status: w3c/CG-DRAFT
 Group: httpslocal
 URL: https://httpslocal.github.io/usecases/
 Editor: Contributors on GitHub, https://github.com/httpslocal/usecases/graphs/contributors
