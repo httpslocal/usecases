@@ -44,7 +44,7 @@ specifies the `https://` scheme only, the document will indicate so.
 A user agent (<dfn>UA</dfn>) is a web browser on a user’s PC, smartphone, tablet
 and so on, which is connected to a local network.
 
-A <dfn>device</dfn> is in the same local network as the [=UA=], capable of HTTPS/WSS server.
+A <dfn>device</dfn> is in the same local network as the [=UA=], capable of HTTPS server.
 
 A <dfn>web service</dfn> is a service hosted on the internet and whose frontend is
 loaded on the [=UA=], which accesses to the [=device=] with HTTPS or WSS on the local network.
@@ -192,7 +192,7 @@ is used for the communication, e.g. file transfer.
 Requirements {#requirements}
 ============================
 
-This section outlines functional and non-functional requirements of HTTPS/WSS
+This section outlines functional and non-functional requirements of HTTPS
 usage in local network represented in [[#usecases]].
 
 Functional requirements consist of guarantee of device trustworthiness,
@@ -200,7 +200,7 @@ device identification, alerting user and user consent, device discovery,
 and certificate management.
 
 Non-functional requirements address security, privacy, availability, scalability,
-and user experience aspects of HTTPS/WSS usage in local network.
+and user experience aspects of HTTPS usage in local network.
 
 ## Functional Requirements ## {#req-functional}
 
@@ -261,13 +261,13 @@ Therefore, considering the [=UA=] shall meet the following requirement:
 - When the frontend of the [=web service=] requests the [=UA=] to access the [=device=] in local network,
     the [=UA=] shall show a popup window to obtain the user’s consent and shall permit
     the access only if the user approve the access.
-- When the [=device=] does not use a [=Web PKI certificate=] for HTTPS/WSS communication,
+- When the [=device=] does not use a [=Web PKI certificate=] for HTTPS communication,
     the [=UA=] shall have a way to obtain user’s consent to trust an alternative identifier
     (e.g., [=non-Web PKI certificate=], PSK, RPK).
 
 ### Certificate Management ### {#req-certificate-management}
 
-When the [=device=] obtains a TLS server certificate for HTTPS/WSS communication,
+When the [=device=] obtains a TLS server certificate for HTTPS communication,
 the [=CA=], [=UA=] and the [=device=] shall meet the following requirements:
 - The [=CA=] that issues certificates for [=device=]s shall be able to revoke the certificates.
 - The [=UA=] shall be able to detect the revocation of the [=device=]’s certificate.
@@ -294,11 +294,11 @@ The non-functional requirements are listed below:
 ### Security ### {#req-security}
 
 It is essential to take care of the following security considerations:
-- If the [=device=] uses a TLS server certificate for HTTPS/WSS communication,
+- If the [=device=] uses a TLS server certificate for HTTPS communication,
     the certificate issuance and renewal steps shall prevent passive network
     eavesdroppers from learning information related to the identification or certificate
     exchanged among the system components (the CA, the [=device=], the [=UA=] and the [=web service=]).
-- If the [=device=] uses a TLS server certificate for HTTPS/WSS communication,
+- If the [=device=] uses a TLS server certificate for HTTPS communication,
     the certificate issuance and renewal steps shall prevent active network attackers
     from impersonating a [=device=] and observing or altering data intended for the [=CA=] or for the [=UA=].
 - If the [=device=] does not use a TLS server certificate, alternate steps for the [=UA=]
@@ -326,7 +326,7 @@ the [=UA=] and the [=device=] shall meet the following requirements:
 - To avoid user tracking by means of using the [=device=], the evice identifier
     (e.g., a TLS server certificate for the [=device=]) should not be static and preinstalled.
     The [=device=] should be capable of obtaining the TLS server certificate dynamically
-    for HTTPS/WSS communication during commissioning.
+    for HTTPS communication during commissioning.
 
 ### Availability ### {#req-availability}
 
@@ -341,11 +341,11 @@ Therefore, the [=device=] and the local network system shall meet the following 
 
 ### Scalability ### {#req-scalability}
 
-If all IoT devices started using [=Web PKI certificate=]s for HTTPS/WSS communication,
+If all IoT devices started using [=Web PKI certificate=]s for HTTPS communication,
 the number of certificates required will be significantly larger than the total number
 of certificates exists today for public web servers.
 Therefore, following exemption may be required:
-- If the [=device=] uses a [=Web PKI certificate=] for HTTPS/WSS communication,
+- If the [=device=] uses a [=Web PKI certificate=] for HTTPS communication,
     the [=CA=] should be exempt to preserve CT (certificate transparency) logs for the [=device=]s.
 
 ### User Experience ### {#req-user-experience}
@@ -354,7 +354,7 @@ While the user interaction is required in certain scenarios, it should not be
 a hindrance to providing a better user experience. Following requirements should be considered:
 - The [=UA=] should minimize user’s interaction for [=device identification=]
     as much as possible.
-- If the [=device=] uses a TLS server certificate for HTTPS/WSS communication,
+- If the [=device=] uses a TLS server certificate for HTTPS communication,
     the procedure of certificate grant and issuance and renewal should be automated
     as much as possible so that the users' interaction can be greatly minimized.
 
