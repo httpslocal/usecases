@@ -115,7 +115,7 @@ A user wants to set up a new home device (e.g., a Wi-Fi access point/router,
 home automation gateway) in his/her home via its web interface.
 User typically opens a given URL for the device (e.g., https://home-router.local, or https://192.168.1.1)
 in a laptop or smart phone’s web browser. Since the new device does not have
-a valid web PKI certificate, the web browser displays a warning like 
+a valid web PKI certificate, the web browser displays a warning like
 “The connection is not secure” but provides an option to ask the user to
 approve the access or add the URL as an exception to the whitelist.
 Once user takes the action, the web browser treats the device as a trusted one
@@ -125,10 +125,10 @@ use an identity (ID) provider's account (e.g., Google, Facebook, and so on)
 to sign in the device’s web interface and provide the needed trust.
 
 Similar secure access is required when a home gateway, which is typically
-controlling other home devices (e.g., door locks, security cameras), 
-uses HTTPS for securely accepting commands via a remote server. 
+controlling other home devices (e.g., door locks, security cameras),
+uses HTTPS for securely accepting commands via a remote server.
 However, when a home gateway happens to get temporarily disconnected
-from the internet, those home devices become inaccessible. 
+from the internet, those home devices become inaccessible.
 In such scenarios, a local HTTPS communication from user’s
 local device (e.g., smart phone or a control device) is essential to control
 and operate the home devices directly through HTTPS connections over the local network.
