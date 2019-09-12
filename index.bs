@@ -326,7 +326,7 @@ the [=UA=] and the [=device=] shall meet the following requirements:
 In scenarios (e.g., [[#uc-07]]) when the [=device=] and the [=UA=] gets temporarily disconnected from the internet,
 the [=UA=] and the [=device=] should be able to communicate with each other on the local network.
 Therefore, the [=device=] and the local network system shall meet the following requirements:
-- When the [=device=] has a private domain name (e.g., *.local, *.home.arpa)
+- When the [=device=] has a private domain name (e.g., \*.local, \*.home.arpa)
     or a private IP address, a [=private CA=] shall be able to issue a TLS server certificate for the [=device=].
 - If the [=device=] has a public domain name, the local network system should have a way to help
     the [=UA=] with resolving the public domain name without an internet connection
