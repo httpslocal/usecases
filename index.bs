@@ -273,10 +273,11 @@ the [=CA=], [=UA=] and the [=device=] shall meet the following requirements:
 - The [=UA=] shall be able to detect the revocation of the [=device=]’s certificate.
 - The [=device=] shall be able to refresh the certificate at any time.
 
-### <dfn>Device Discovery</dfn> ### {#req-device-discovery}
+### <dfn>Device Discovery</dfn> (optional) ### {#req-device-discovery}
 
 As described in [[#uc-02]] and [[#uc-03]], when the [=web service=] does not know the device URL in advance,
-the [=device=] needs to be discovered. That means the discovery process must meet the following requirements:
+the [=device=] needs to be discovered. That means, if device discovery were to be implemented, the process must meet the following requirements:
+
 - The [=UA=] shall be able to discover the presence of [=device=]s in the same local network.
 - The [=UA=] shall be able to obtain the endpoint URL of the [=device=] that has the scheme `https://` or `wss://`.
 - When the [=UA=] finds multiple [=device=]s, the [=UA=] shall be able to present the selector interface
