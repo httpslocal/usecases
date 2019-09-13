@@ -63,7 +63,7 @@ A <dfn>private CA</dfn> is a CA responsible for issuing the [=non-Web PKI certif
 Use cases {#usecases}
 =====================
 
-## UC-01: Photo sharing between online services and home NAS devices ## {#uc-01}
+## UC-1: Photo sharing between online services and home NAS devices ## {#uc-1}
 
 A user usually stores her private photos and videos in a home NAS device.
 She opens an online photo sharing service in a browser on her smartphone.
@@ -74,7 +74,7 @@ if she usually posts photos to the online service from her smartphone directly, 
 
 ![uc01](figs/uc01.jpg)
 
-## UC-02: Video streaming with cache storage in local network ## {#uc-02}
+## UC-2: Video streaming with cache storage in local network ## {#uc-2}
 
 A user has a video cache server appliance in her home for enjoying high-quality (e.g. 4K) online video streaming services.
 She enters an online video streaming service by using a browser on her TV.
@@ -87,7 +87,7 @@ She can watch the movie comfortably (e.g. without causing stalls) regardless of 
 
 ![uc02](figs/uc02.jpg)
 
-## UC-03: Web-based UI for home appliances (input/output constrained devices) ## {#uc-03}
+## UC-3: Web-based UI for home appliances (input/output constrained devices) ## {#uc-3}
 
 A user controls home appliances (e.g. air conditioner, microwave oven, refrigerator) with an online GUI service on the internet.
 The home appliances are designed natively to be used via the online GUI loaded in a browser on her smartphone or tablet.
@@ -96,7 +96,7 @@ Under her approval, the service can be granted access privileges for the applian
 
 ![uc03](figs/uc03.jpg)
 
-## UC-04: Embedded system monitoring and controlling for display-capable devices ## {#uc-04}
+## UC-4: Embedded system monitoring and controlling for display-capable devices ## {#uc-4}
 
 A field engineer of a digital signage service provider sets up an internet-capable display device.
 The engineer makes the device display a specific website as a signage content by using a browser on the device.
@@ -107,7 +107,7 @@ the health of the device, if necessary, but also reboot the device remotely via 
 
 ![uc04](figs/uc04.jpg)
 
-## UC-05: Data analysis from analytical and measuring instruments in local network ## {#uc-05}
+## UC-5: Data analysis from analytical and measuring instruments in local network ## {#uc-5}
 
 An analytical and measuring instrument in local network outputs a large amount of raw data as the result of an experiment.
 An experimenter (a user of the instrument) signs in to a web-based analytical service provided by the vender of the instrument by using a browser in her PC.
@@ -115,19 +115,19 @@ The experimenter analyzes the raw data by using the web service and the service 
 
 ![uc05](figs/uc05.jpg)
 
-## UC-06: Secure offline communication for home automation ## {#uc-06}
+## UC-6: Secure offline communication for home automation ## {#uc-6}
 
 A user sets up a home automation gateway is under normal circumstances using HTTPS to securely accept commands via a remote server.
 In some cases the gateways internet connection is interrupted but local communication between a wall mounted control surface, app, or similar should stil be given.
 This becomes very important when we consider that devices that can be controlled this way include door locks and security cameras.
 
-## UC-07: Companion Device for Broadcast Interactive Service ## {#uc-07}
+## UC-7: Companion Device for Broadcast Interactive Service ## {#uc-7}
 
 A user is watching a broadcast interactive service which is enhanced by a broadcaster’s web app running on the user agent of TV. The user hands a companion device, e.g.  Smartphone, and launches a user agent with the Frontend page from the broadcaster web server. The Frontend page discovers the user-agent of TV and securely communicates with the broadcaster’s web application via the Web Socket Server on TV in order to provide GUI for the interactive broadcast service. Note that this use case is similar to the 2-UA of the Presentation API but the difference is that the broadcaster’s web application on TV is running on UA of TV in advance.
 
 ![uc07](figs/uc07.jpg)
 
-## UC-08: Presenting with Projector at office ## {#uc-08}
+## UC-8: Presenting with Projector at office ## {#uc-8}
 
 A user is attending a meeting at office (outside home). The user logs on an online document sharing service on PC and present his document file on the service with the Projector connected via local network. FrontEnd page on UA1 at PC initiates to launch 2nd frontend page on 2nd UA at the projector to let the 2nd frontend page present the document.  Note that this use case is similar to 2-UA of Presentation API but the communication between 2-UA should be secured to prevent the MITM attack in the local network and also the regular WebSocket API is used for the communication, e.g. file transfer.
 
@@ -183,8 +183,8 @@ however, the [=device=] and/or the [=UA=] shall have one of the following featur
 
 ### <dfn>Device Identification</dfn> ### {#req-device-identification}
 
-In case that the user inputs the device URL to the address bar of the [=UA=] directly ([[#uc-06]])
-or the [=UA=] shows the popup window to the user to get the user's consent ([[#uc-02]], [[#uc-03]]),
+In case that the user inputs the device URL to the address bar of the [=UA=] directly ([[#uc-6]])
+or the [=UA=] shows the popup window to the user to get the user's consent ([[#uc-2]], [[#uc-3]]),
 the user may be able to recognize that the device URL displayed or input on the [=UA=]
 indicates the real device on the local network. In such cases, the [=device=] and/or
 the [=UA=] shall meet the following requirements:
@@ -219,7 +219,7 @@ the [=CA=], [=UA=] and the [=device=] shall meet the following requirements:
 
 ### <dfn>Device Discovery</dfn> (optional) ### {#req-device-discovery}
 
-As described in [[#uc-02]] and [[#uc-03]], when the [=web service=] does not know the device URL in advance,
+As described in [[#uc-2]] and [[#uc-3]], when the [=web service=] does not know the device URL in advance,
 the [=device=] needs to be discovered. That means, if device discovery were to be implemented, the process must meet the following requirements:
 
 - The [=UA=] shall be able to discover the presence of [=devices=] in the same local network.
@@ -275,7 +275,7 @@ the [=UA=] and the [=device=] shall meet the following requirements:
 
 ### Availability ### {#req-availability}
 
-In scenarios (e.g., [[#uc-06]]) when the [=device=] and the [=UA=] gets temporarily disconnected from the internet,
+In scenarios (e.g., [[#uc-6]]) when the [=device=] and the [=UA=] gets temporarily disconnected from the internet,
 the [=UA=] and the [=device=] should be able to communicate with each other on the local network.
 Therefore, the [=device=] and the local network system shall meet the following requirements:
 - When the [=device=] has a private domain name (e.g., \*.local, \*.home.arpa)
