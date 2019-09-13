@@ -4,12 +4,16 @@ This document describes use cases where browsers communicate with web-server-cap
 These use cases are intended to clarify requirements in terms of network (topology, protocol, etc.) and security
 (privacy concern, issuing a certificate, validation, etc.).
 
-## UC-01: Access audio contents in a home storage device from a cloud service
+## UC-01: Photo sharing between online services and home NAS devices
 
-Users can store their audio contents in their storage device, or set-top boxes, in their home.
-They access online music web services with web browsers, and use a music player implemented as a web application
-in the web services to play music stored in their home network.
-The music player send metadata of the music to the web service, to recommend another music contents.
+A user usually stores her private photos and videos in a home NAS device.
+She opens an online photo sharing service in a browser on her smartphone.
+The online service finds her home NAS device through the browser and shows her the NAS via a popup window.
+She selects the NAS and the browser shows her private photos in the NAS as well as the ones already stored in the online service.
+She then selects and posts some photos that she would like to share with her friends or,
+if she usually posts photos to the online service from her smartphone directly, she downloads the photos and posts them to the NAS device.
+
+![uc01](figs/uc01.jpg)
 
 ## UC-02: Video streaming with cache storage in local network
 
@@ -52,32 +56,21 @@ The experimenter analyzes the raw data by using the web service and the service 
 
 ![uc05](figs/uc05.jpg)
 
-## UC-06: Photo sharing between online services and home NAS devices
-
-A user usually stores her private photos and videos in a home NAS device.
-She opens an online photo sharing service in a browser on her smartphone.
-The online service finds her home NAS device through the browser and shows her the NAS via a popup window.
-She selects the NAS and the browser shows her private photos in the NAS as well as the ones already stored in the online service.
-She then selects and posts some photos that she would like to share with her friends or,
-if she usually posts photos to the online service from her smartphone directly, she downloads the photos and posts them to the NAS device.
-
-![uc06](figs/uc06.jpg)
-
-## UC-07: Secure offline communication for home automation
+## UC-06: Secure offline communication for home automation
 
 A user sets up a home automation gateway is under normal circumstances using HTTPS to securely accept commands via a remote server.
 In some cases the gateways internet connection is interrupted but local communication between a wall mounted control surface, app, or similar should stil be given.
 This becomes very important when we consider that devices that can be controlled this way include door locks and security cameras.
 
-## UC-08: Companion Device for Broadcast Interactive Service
+## UC-07: Companion Device for Broadcast Interactive Service
 
 A user is watching a broadcast interactive service which is enhanced by a broadcaster’s web app running on the user agent of TV. The user hands a companion device, e.g.  Smartphone, and launches a user agent with the Frontend page from the broadcaster web server. The Frontend page discovers the user-agent of TV and securely communicates with the broadcaster’s web application via the Web Socket Server on TV in order to provide GUI for the interactive broadcast service. Note that this use case is similar to the 2-UA of the Presentation API but the difference is that the broadcaster’s web application on TV is running on UA of TV in advance.
 
-![uc08](figs/uc08.jpg)
+![uc07](figs/uc07.jpg)
 
-## UC-09: Presenting with Projector at office
+## UC-08: Presenting with Projector at office
 
 A user is attending a meeting at office (outside home). The user logs on an online document sharing service on PC and present his document file on the service with the Projector connected via local network. FrontEnd page on UA1 at PC initiates to launch 2nd frontend page on 2nd UA at the projector to let the 2nd frontend page present the document.  Note that this use case is similar to 2-UA of Presentation API but the communication between 2-UA should be secured to prevent the MITM attack in the local network and also the regular WebSocket API is used for the communication, e.g. file transfer.
 
 
-![uc09](figs/uc09.jpg)
+![uc08](figs/uc08.jpg)
