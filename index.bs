@@ -41,7 +41,7 @@ is not limited to the `https://` scheme but also includes WebSocket over TLS (`w
 schemes that operate in a similar way. Whenever there is a need to disambiguate so that the term
 specifies the `https://` scheme only, the document will indicate so.
 
-A user agent (<dfn>UA</dfn>) is a web browser on a user’s PC, smartphone, tablet
+A <dfn>UA</dfn> (User Agent) is a web browser on a user’s PC, smartphone, tablet
 and so on, which is connected to a local network.
 
 A <dfn>device</dfn> is in the same local network as the [=UA=], capable of HTTPS server.
@@ -55,10 +55,10 @@ a root CA (Certificate Authority) trusted by the [=UA=]  (preinstalled on the [=
 A <dfn>non-Web PKI certificate</dfn> is a TLS server certificate that cannot chain
 up to a root CA, or a self-signed certificate.
 
-A <dfn>CA</dfn> (merely called `CA` in this document) is a CA responsible for issuing the [=Web PKI certificate=]s or [=non-Web PKI certificate=]s.
-It is not restricted to a CA responsible only for issuing the [=Web PKI certificate=]s.
+A <dfn>CA</dfn> (merely called `CA` in this document) is a CA responsible for issuing the [=Web PKI certificates=] or [=non-Web PKI certificates=].
+It is not restricted to a CA responsible only for issuing the [=Web PKI certificates=].
 
-A <dfn>private CA</dfn> is a CA responsible for issuing the [=non-Web PKI certificate=]s.
+A <dfn>private CA</dfn> is a CA responsible for issuing the [=non-Web PKI certificates=].
 
 Use cases {#usecases}
 =====================
@@ -213,7 +213,7 @@ Therefore, considering the [=UA=] shall meet the following requirement:
 
 When the [=device=] obtains a TLS server certificate for HTTPS communication,
 the [=CA=], [=UA=] and the [=device=] shall meet the following requirements:
-- The [=CA=] that issues certificates for [=device=]s shall be able to revoke the certificates.
+- The [=CA=] that issues certificates for [=devices=] shall be able to revoke the certificates.
 - The [=UA=] shall be able to detect the revocation of the [=device=]’s certificate.
 - The [=device=] shall be able to refresh the certificate at any time.
 
@@ -222,10 +222,10 @@ the [=CA=], [=UA=] and the [=device=] shall meet the following requirements:
 As described in [[#uc-02]] and [[#uc-03]], when the [=web service=] does not know the device URL in advance,
 the [=device=] needs to be discovered. That means, if device discovery were to be implemented, the process must meet the following requirements:
 
-- The [=UA=] shall be able to discover the presence of [=device=]s in the same local network.
+- The [=UA=] shall be able to discover the presence of [=devices=] in the same local network.
 - The [=UA=] shall be able to obtain the endpoint URL of the [=device=] that has the scheme `https://` or `wss://`.
-- When the [=UA=] finds multiple [=device=]s, the [=UA=] shall be able to present the selector interface
-    to display the list of the [=device=]s and allow the user to select one specific [=device=].
+- When the [=UA=] finds multiple [=devices=], the [=UA=] shall be able to present the selector interface
+    to display the list of the [=devices=] and allow the user to select one specific [=device=].
 
 ## Non-Functional Requirements ## {#req-non-funcational-req}
 
@@ -265,7 +265,7 @@ The user privacy shall be preserved against the [=web service=] especially when 
 allows the frontend of the [=web service=] to access the [=device=] for private use.  In such scenarios,
 the [=UA=] and the [=device=] shall meet the following requirements:
 - When the [=UA=] supports [=device discovery=] functionality mentioned above and the [=UA=] finds
-    multiple [=device=]s, [=UA=] shall disclose only one [=device=] selected by the user.
+    multiple [=devices=], [=UA=] shall disclose only one [=device=] selected by the user.
 - To avoid disclosing the device name and the IP address to the internet,
     the [=device=] should be able to use a private domain name.
 - To avoid user tracking by means of using the [=device=], the evice identifier
@@ -286,12 +286,12 @@ Therefore, the [=device=] and the local network system shall meet the following 
 
 ### Scalability ### {#req-scalability}
 
-If all IoT devices started using [=Web PKI certificate=]s for HTTPS communication,
+If all IoT devices started using [=Web PKI certificates=] for HTTPS communication,
 the number of certificates required will be significantly larger than the total number
 of certificates exists today for public web servers.
 Therefore, following exemption may be required:
 - If the [=device=] uses a [=Web PKI certificate=] for HTTPS communication,
-    the [=CA=] should be exempt to preserve CT (certificate transparency) logs for the [=device=]s.
+    the [=CA=] should be exempt to preserve CT (certificate transparency) logs for the [=devices=].
 
 ### User Experience ### {#req-user-experience}
 
