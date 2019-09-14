@@ -205,7 +205,7 @@ The functional requirements are listed below:
 
 In the following, we elaborate on individual requirements as mentioned above.
 
-### Guarantee of Device Trustworthiness ### {#req-guarantee-of-device-trustworthiness}
+### REQ-1: Guarantee of Device Trustworthiness ### {#req-guarantee-of-device-trustworthiness}
 
 The [=UA=] accesses the [=device=] with TLS (HTTPS or WSS) in all of the use cases envisioned so far.
 If the [=UA=] cannot trust the [=device=]’s TLS server certificate,
@@ -221,27 +221,27 @@ However, one may choose to use a memorable simple private domain name (e.g., “
 or may not want to register the [=device=] name to the public DNS server because of
 privacy concerns. In such scenarios, it is better not to use the [=Web PKI certificate=] for the [=device=],
 however, the [=device=] and/or the [=UA=] shall have one of the following features or methods:
-- The [=device=] has a way to obtain and use a [=non-Web PKI certificate=] and
+- REQ-1-1: The [=device=] has a way to obtain and use a [=non-Web PKI certificate=] and
     the [=UA=] has some out-of-band mechanisms to validate the certificate as a trusted one
     (e.g., the user and/or the web service’s approval).
-- The [=device=] does not have a certificate but the [=UA=] has a way to validate
+- REQ-1-2: The [=device=] does not have a certificate but the [=UA=] has a way to validate
     and trust the [=device=] without any certificates (e.g., by using a PSK (pre-shared key)
     or an RPK (raw public key)), which is shared to the [=UA=] in a secure way.
 
-### <dfn>Device Identification</dfn> ### {#req-device-identification}
+### REQ-2: <dfn>Device Identification</dfn> ### {#req-device-identification}
 
 In case that the user inputs the device URL to the address bar of the [=UA=] directly ([[#uc-6]])
 or the [=UA=] shows the popup window to the user to get the user's consent ([[#uc-2]], [[#uc-3]]),
 the user may be able to recognize that the device URL displayed or input on the [=UA=]
 indicates the real device on the local network. In such cases, the [=device=] and/or
 the [=UA=] shall meet the following requirements:
-- The device identifier (domain name) should be easy to remember and short enough but
+- REQ-2-1: The device identifier (domain name) should be easy to remember and short enough but
     not to recognize as fraudulent by anti-phishing.
-- The [=device=] and the [=UA=] should have a pairing method by using the device
+- REQ-2-2: The [=device=] and the [=UA=] should have a pairing method by using the device
     interface (e.g., pushing a specific button on the [=device=] to start the pairing,
     showing the PIN code for the pairing on the [=device=]’s display).
 
-### Alerting User and User Consent ### {#req-alerting-user}
+### REQ-3: Alerting User and User Consent ### {#req-alerting-user}
 
 The frontend of the [=web service=]  loaded on the [=UA=] should not be able to access the [=device=]
 without an explicit approval from the user especially during its first time access.
@@ -249,29 +249,29 @@ This is essential in cases where the [=device=] is not capable of using a [=Web 
 In such cases, the [=UA=] will possibly use an alternative identifier (e.g., [=non-Web PKI certificate=], PSK, RPK)
 but it must not be trusted without the user’s consent.
 Therefore, considering the [=UA=] shall meet the following requirement:
-- When the frontend of the [=web service=] requests the [=UA=] to access the [=device=] in local network,
+- REQ-3-1: When the frontend of the [=web service=] requests the [=UA=] to access the [=device=] in local network,
     the [=UA=] shall show a popup window to obtain the user’s consent and shall permit
     the access only if the user approve the access.
-- When the [=device=] does not use a [=Web PKI certificate=] for HTTPS communication,
+- REQ-3-2: When the [=device=] does not use a [=Web PKI certificate=] for HTTPS communication,
     the [=UA=] shall have a way to obtain user’s consent to trust an alternative identifier
     (e.g., [=non-Web PKI certificate=], PSK, RPK).
 
-### Certificate Management ### {#req-certificate-management}
+### REQ-4: Certificate Management ### {#req-certificate-management}
 
 When the [=device=] obtains a TLS server certificate for HTTPS communication,
 the [=CA=], [=UA=] and the [=device=] shall meet the following requirements:
-- The [=CA=] that issues certificates for [=devices=] shall be able to revoke the certificates.
-- The [=UA=] shall be able to detect the revocation of the [=device=]’s certificate.
-- The [=device=] shall be able to refresh the certificate at any time.
+- REQ-4-1: The [=CA=] that issues certificates for [=devices=] shall be able to revoke the certificates.
+- REQ-4-2: The [=UA=] shall be able to detect the revocation of the [=device=]’s certificate.
+- REQ-4-3: The [=device=] shall be able to refresh the certificate at any time.
 
-### <dfn>Device Discovery</dfn> (optional) ### {#req-device-discovery}
+### REQ-5: <dfn>Device Discovery</dfn> (optional) ### {#req-device-discovery}
 
 As described in [[#uc-2]] and [[#uc-3]], when the [=web service=] does not know the device URL in advance,
 the [=device=] needs to be discovered. That means, if device discovery were to be implemented, the process must meet the following requirements:
 
-- The [=UA=] shall be able to discover the presence of [=devices=] in the same local network.
-- The [=UA=] shall be able to obtain the endpoint URL of the [=device=] that has the scheme `https://` or `wss://`.
-- When the [=UA=] finds multiple [=devices=], the [=UA=] shall be able to present the selector interface
+- REQ-5-1: The [=UA=] shall be able to discover the presence of [=devices=] in the same local network.
+- REQ-5-2: The [=UA=] shall be able to obtain the endpoint URL of the [=device=] that has the scheme `https://` or `wss://`.
+- REQ-5-3: When the [=UA=] finds multiple [=devices=], the [=UA=] shall be able to present the selector interface
     to display the list of the [=devices=] and allow the user to select one specific [=device=].
 
 ## Non-Functional Requirements ## {#req-non-funcational-req}
@@ -283,70 +283,70 @@ The non-functional requirements are listed below:
 - Scalability
 - User Experience
 
-### Security ### {#req-security}
+### REQ-6: Security ### {#req-security}
 
 It is essential to take care of the following security considerations:
-- If the [=device=] uses a TLS server certificate for HTTPS communication,
+- REQ-6-1: If the [=device=] uses a TLS server certificate for HTTPS communication,
     the certificate issuance and renewal steps shall prevent passive network
     eavesdroppers from learning information related to the identification or certificate
     exchanged among the system components (the CA, the [=device=], the [=UA=] and the [=web service=]).
-- If the [=device=] uses a TLS server certificate for HTTPS communication,
+- REQ-6-2: If the [=device=] uses a TLS server certificate for HTTPS communication,
     the certificate issuance and renewal steps shall prevent active network attackers
     from impersonating a [=device=] and observing or altering data intended for the [=CA=] or for the [=UA=].
-- If the [=device=] does not use a TLS server certificate, alternate steps for the [=UA=]
+- REQ-6-3: If the [=device=] does not use a TLS server certificate, alternate steps for the [=UA=]
     to initiate a TLS session to the [=device=] (e.g., sharing and using a PSK or a RPK)
     shall prevent passive network eavesdroppers from getting the PSK or the private key of the RPK.
-- If the [=device=] does not use a TLS server certificate, alternate steps for the [=UA=]
+- REQ-6-4: If the [=device=] does not use a TLS server certificate, alternate steps for the [=UA=]
     to initiate a TLS session to the [=device=] (e.g., sharing and using a PSK or a RPK)
     shall prevent active network attackers from impersonating a [=device=] and observing or
     altering the keys for the [=UA=].
-- [=Device identification=]  (e.g., the pairing method mentioned above) shall prevent
+- REQ-6-5:  [=Device identification=]  (e.g., the pairing method mentioned above) shall prevent
     passive network eavesdroppers from learning information related to identification.
-- [=Device identification=] and [=device discovery=]  (if the [=UA=] supports it) shall prevent
+- REQ-6-6:  [=Device identification=] and [=device discovery=]  (if the [=UA=] supports it) shall prevent
     active network attackers from impersonating a [=device=] and observing or altering
     data intended for the [=CA=] or for the [=UA=].
 
-### Privacy ### {#req-privacy}
+### REQ-7: Privacy ### {#req-privacy}
 
 The user privacy shall be preserved against the [=web service=] especially when the user
 allows the frontend of the [=web service=] to access the [=device=] for private use.  In such scenarios,
 the [=UA=] and the [=device=] shall meet the following requirements:
-- When the [=UA=] supports [=device discovery=] functionality mentioned above and the [=UA=] finds
+- REQ-7-1: When the [=UA=] supports [=device discovery=] functionality mentioned above and the [=UA=] finds
     multiple [=devices=], [=UA=] shall disclose only one [=device=] selected by the user.
-- To avoid disclosing the device name and the IP address to the internet,
+- REQ-7-2: To avoid disclosing the device name and the IP address to the internet,
     the [=device=] should be able to use a private domain name.
-- To avoid user tracking by means of using the [=device=], the evice identifier
+- REQ-7-3: To avoid user tracking by means of using the [=device=], the evice identifier
     (e.g., a TLS server certificate for the [=device=]) should not be static and preinstalled.
     The [=device=] should be capable of obtaining the TLS server certificate dynamically
     for HTTPS communication during commissioning.
 
-### Availability ### {#req-availability}
+### REQ-8: Availability ### {#req-availability}
 
 In scenarios (e.g., [[#uc-6]]) when the [=device=] and the [=UA=] gets temporarily disconnected from the internet,
 the [=UA=] and the [=device=] should be able to communicate with each other on the local network.
 Therefore, the [=device=] and the local network system shall meet the following requirements:
-- When the [=device=] has a private domain name (e.g., \*.local, \*.home.arpa)
+- REQ-8-1: When the [=device=] has a private domain name (e.g., \*.local, \*.home.arpa)
     or a private IP address, a [=private CA=] shall be able to issue a TLS server certificate for the [=device=].
-- If the [=device=] has a public domain name, the local network system should have a way to help
+- REQ-8-2: If the [=device=] has a public domain name, the local network system should have a way to help
     the [=UA=] with resolving the public domain name without an internet connection
     (e.g., without querying a public DNS server).
 
-### Scalability ### {#req-scalability}
+### REQ-9: Scalability ### {#req-scalability}
 
 If all IoT devices started using [=Web PKI certificates=] for HTTPS communication,
 the number of certificates required will be significantly larger than the total number
 of certificates exists today for public web servers.
 Therefore, following exemption may be required:
-- If the [=device=] uses a [=Web PKI certificate=] for HTTPS communication,
+- REQ-9-1: If the [=device=] uses a [=Web PKI certificate=] for HTTPS communication,
     the [=CA=] should be exempt to preserve CT (certificate transparency) logs for the [=devices=].
 
-### User Experience ### {#req-user-experience}
+### REQ-10: User Experience ### {#req-user-experience}
 
 While the user interaction is required in certain scenarios, it should not be
 a hindrance to providing a better user experience. Following requirements should be considered:
-- The [=UA=] should minimize user’s interaction for [=device identification=]
+- REQ-10-1: The [=UA=] should minimize user’s interaction for [=device identification=]
     as much as possible.
-- If the [=device=] uses a TLS server certificate for HTTPS communication,
+- REQ-10-2: If the [=device=] uses a TLS server certificate for HTTPS communication,
     the procedure of certificate grant and issuance and renewal should be automated
     as much as possible so that the users' interaction can be greatly minimized.
 
