@@ -1029,7 +1029,7 @@ Possible extra rowspan handling
 		}
 	/* } */
 
-	@supports (display:grid) and (display:contents) {
+	@supports (display:grid) {
 		/* Use #toc over .toc to override non-@supports rules. */
 		#toc {
 			display: grid;
@@ -1212,9 +1212,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version cb5a17652cb33dffd20b8b6a876bb811c1f749a9" name="generator">
+  <meta content="Bikeshed version db559f98d6c99655936abc96647a0e88ba98a9cf" name="generator">
   <link href="https://httpslocal.github.io/usecases/" rel="canonical">
-  <meta content="4faada5b36775e00eb1ca8ee5ade3646da250f1b" name="document-revision">
+  <meta content="6c94a02c44f015cc4d192c5a70ace75231c8c14d" name="document-revision">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1403,7 +1403,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Use Cases and Requirements on HTTPS-enabled Local Network Servers</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2019-09-13">13 September 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2019-09-14">14 September 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1426,12 +1426,6 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
   <div data-fill-with="at-risk"></div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
-   <p> This specification was published by the <a href="https://www.w3.org/community/httpslocal/">HTTPS in Local Network Community Group</a>.
-  It is not a W3C Standard nor is it on the W3C Standards Track.
-
-  Please note that under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a> there is a limited opt-out and other conditions apply.
-
-  Learn more about <a href="http://www.w3.org/community/">W3C Community and Business Groups</a>. </p>
    <p></p>
   </div>
   <div data-fill-with="at-risk"></div>
@@ -1443,14 +1437,14 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
     <li>
      <a href="#usecases"><span class="secno">3</span> <span class="content">Use cases</span></a>
      <ol class="toc">
-      <li><a href="#uc-01"><span class="secno">3.1</span> <span class="content">UC-01: Photo sharing between online services and home NAS devices</span></a>
-      <li><a href="#uc-02"><span class="secno">3.2</span> <span class="content">UC-02: Video streaming with cache storage in local network</span></a>
-      <li><a href="#uc-03"><span class="secno">3.3</span> <span class="content">UC-03: Web-based UI for home appliances (input/output constrained devices)</span></a>
-      <li><a href="#uc-04"><span class="secno">3.4</span> <span class="content">UC-04: Embedded system monitoring and controlling for display-capable devices</span></a>
-      <li><a href="#uc-05"><span class="secno">3.5</span> <span class="content">UC-05: Data analysis from analytical and measuring instruments in local network</span></a>
-      <li><a href="#uc-06"><span class="secno">3.6</span> <span class="content">UC-06: Secure offline communication for home automation</span></a>
-      <li><a href="#uc-07"><span class="secno">3.7</span> <span class="content">UC-07: Companion Device for Broadcast Interactive Service</span></a>
-      <li><a href="#uc-08"><span class="secno">3.8</span> <span class="content">UC-08: Presenting with Projector at office</span></a>
+      <li><a href="#uc-1"><span class="secno">3.1</span> <span class="content">UC-1: Photo sharing between online services and home NAS devices</span></a>
+      <li><a href="#uc-2"><span class="secno">3.2</span> <span class="content">UC-2: Video streaming with cache storage in local network</span></a>
+      <li><a href="#uc-3"><span class="secno">3.3</span> <span class="content">UC-3: Web-based UI for home appliances (input/output constrained devices)</span></a>
+      <li><a href="#uc-4"><span class="secno">3.4</span> <span class="content">UC-4: Embedded system monitoring and controlling for display-capable devices</span></a>
+      <li><a href="#uc-5"><span class="secno">3.5</span> <span class="content">UC-5: Data analysis from analytical and measuring instruments in local network</span></a>
+      <li><a href="#uc-6"><span class="secno">3.6</span> <span class="content">UC-6: Secure offline communication for home automation</span></a>
+      <li><a href="#uc-7"><span class="secno">3.7</span> <span class="content">UC-7: Companion Device for Broadcast Interactive Service</span></a>
+      <li><a href="#uc-8"><span class="secno">3.8</span> <span class="content">UC-8: Presenting with Projector at office</span></a>
      </ol>
     <li>
      <a href="#requirements"><span class="secno">4</span> <span class="content">Requirements</span></a>
@@ -1458,20 +1452,20 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
       <li>
        <a href="#req-functional"><span class="secno">4.1</span> <span class="content">Functional Requirements</span></a>
        <ol class="toc">
-        <li><a href="#req-guarantee-of-device-trustworthiness"><span class="secno">4.1.1</span> <span class="content">Guarantee of Device Trustworthiness</span></a>
-        <li><a href="#req-device-identification"><span class="secno">4.1.2</span> <span class="content"><span>Device Identification</span></span></a>
-        <li><a href="#req-alerting-user"><span class="secno">4.1.3</span> <span class="content">Alerting User and User Consent</span></a>
-        <li><a href="#req-certificate-management"><span class="secno">4.1.4</span> <span class="content">Certificate Management</span></a>
-        <li><a href="#req-device-discovery"><span class="secno">4.1.5</span> <span class="content"><span>Device Discovery</span> (optional)</span></a>
+        <li><a href="#req-guarantee-of-device-trustworthiness"><span class="secno">4.1.1</span> <span class="content">REQ-1: Guarantee of Device Trustworthiness</span></a>
+        <li><a href="#req-device-identification"><span class="secno">4.1.2</span> <span class="content">REQ-2: <span>Device Identification</span></span></a>
+        <li><a href="#req-alerting-user"><span class="secno">4.1.3</span> <span class="content">REQ-3: Alerting User and User Consent</span></a>
+        <li><a href="#req-certificate-management"><span class="secno">4.1.4</span> <span class="content">REQ-4: Certificate Management</span></a>
+        <li><a href="#req-device-discovery"><span class="secno">4.1.5</span> <span class="content">REQ-5: <span>Device Discovery</span> (optional)</span></a>
        </ol>
       <li>
        <a href="#req-non-funcational-req"><span class="secno">4.2</span> <span class="content">Non-Functional Requirements</span></a>
        <ol class="toc">
-        <li><a href="#req-security"><span class="secno">4.2.1</span> <span class="content">Security</span></a>
-        <li><a href="#req-privacy"><span class="secno">4.2.2</span> <span class="content">Privacy</span></a>
-        <li><a href="#req-availability"><span class="secno">4.2.3</span> <span class="content">Availability</span></a>
-        <li><a href="#req-scalability"><span class="secno">4.2.4</span> <span class="content">Scalability</span></a>
-        <li><a href="#req-user-experience"><span class="secno">4.2.5</span> <span class="content">User Experience</span></a>
+        <li><a href="#req-security"><span class="secno">4.2.1</span> <span class="content">REQ-6: Security</span></a>
+        <li><a href="#req-privacy"><span class="secno">4.2.2</span> <span class="content">REQ-7: Privacy</span></a>
+        <li><a href="#req-availability"><span class="secno">4.2.3</span> <span class="content">REQ-8: Availability</span></a>
+        <li><a href="#req-scalability"><span class="secno">4.2.4</span> <span class="content">REQ-9: Scalability</span></a>
+        <li><a href="#req-user-experience"><span class="secno">4.2.5</span> <span class="content">REQ-10: User Experience</span></a>
        </ol>
      </ol>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
@@ -1510,7 +1504,7 @@ of the counterpart of the communication. This means, the scope of the term HTTPS
 is not limited to the <code>https://</code> scheme but also includes WebSocket over TLS (<code>wss://</code>) and other
 schemes that operate in a similar way. Whenever there is a need to disambiguate so that the term
 specifies the <code>https://</code> scheme only, the document will indicate so.</p>
-   <p>A user agent (<dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="ua">UA</dfn>) is a web browser on a user’s PC, smartphone, tablet
+   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="ua">UA</dfn> (User Agent) is a web browser on a user’s PC, smartphone, tablet
 and so on, which is connected to a local network.</p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="device">device</dfn> is in the same local network as the <a data-link-type="dfn" href="#ua" id="ref-for-ua①">UA</a>, capable of HTTPS server.</p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="web-service">web service</dfn> is a service hosted on the internet and whose frontend is
@@ -1519,60 +1513,106 @@ loaded on the <a data-link-type="dfn" href="#ua" id="ref-for-ua②">UA</a>, whic
 a root CA (Certificate Authority) trusted by the <a data-link-type="dfn" href="#ua" id="ref-for-ua③">UA</a> (preinstalled on the <a data-link-type="dfn" href="#ua" id="ref-for-ua④">UA</a>).</p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="non-web-pki-certificate">non-Web PKI certificate</dfn> is a TLS server certificate that cannot chain
 up to a root CA, or a self-signed certificate.</p>
-   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="ca">CA</dfn> (merely called <code>CA</code> in this document) is a CA responsible for issuing the <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate">Web PKI certificate</a>s or <a data-link-type="dfn" href="#non-web-pki-certificate" id="ref-for-non-web-pki-certificate">non-Web PKI certificate</a>s.
-It is not restricted to a CA responsible only for issuing the <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate①">Web PKI certificate</a>s.</p>
-   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="private-ca">private CA</dfn> is a CA responsible for issuing the <a data-link-type="dfn" href="#non-web-pki-certificate" id="ref-for-non-web-pki-certificate①">non-Web PKI certificate</a>s.</p>
+   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="ca">CA</dfn> (merely called <code>CA</code> in this document) is a CA responsible for issuing the <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate">Web PKI certificates</a> or <a data-link-type="dfn" href="#non-web-pki-certificate" id="ref-for-non-web-pki-certificate">non-Web PKI certificates</a>.
+It is not restricted to a CA responsible only for issuing the <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate①">Web PKI certificates</a>.</p>
+   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="private-ca">private CA</dfn> is a CA responsible for issuing the <a data-link-type="dfn" href="#non-web-pki-certificate" id="ref-for-non-web-pki-certificate①">non-Web PKI certificates</a>.</p>
    <h2 class="heading settled" data-level="3" id="usecases"><span class="secno">3. </span><span class="content">Use cases</span><a class="self-link" href="#usecases"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="uc-01"><span class="secno">3.1. </span><span class="content">UC-01: Photo sharing between online services and home NAS devices</span><a class="self-link" href="#uc-01"></a></h3>
-   <p>A user usually stores her private photos and videos in a home NAS device.
-She opens an online photo sharing service in a browser on her smartphone.
-The online service finds her home NAS device through the browser and shows her the NAS via a popup window.
-She selects the NAS and the browser shows her private photos in the NAS as well as the ones already stored in the online service.
-She then selects and posts some photos that she would like to share with her friends or,
-if she usually posts photos to the online service from her smartphone directly, she downloads the photos and posts them to the NAS device.</p>
-   <p>!<a href="figs/uc01.jpg">uc01</a></p>
-   <h3 class="heading settled" data-level="3.2" id="uc-02"><span class="secno">3.2. </span><span class="content">UC-02: Video streaming with cache storage in local network</span><a class="self-link" href="#uc-02"></a></h3>
-   <p>A user has a video cache server appliance in her home for enjoying high-quality (e.g. 4K) online video streaming services.
-She enters an online video streaming service by using a browser on her TV.
-The streaming service finds her cache server appliance through the browser and shows her the appliance via a popup window.
-She selects the appliance and allows the service to use it as cache storage for high-quality video streaming.
-After her approval, the service can cache 4K movies purchased by her (or put into her watch-list, etc.) in the appliance.
-The video caching can be done by the frontend of the service loaded on the browser or by the appliance itself.
-When she wants to watch one of the movies cached in the appliance, the online service fetch the movie from the appliance directly.
-She can watch the movie comfortably (e.g. without causing stalls) regardless of the condition of the internet.</p>
-   <p>!<a href="figs/uc02.jpg">uc02</a></p>
-   <h3 class="heading settled" data-level="3.3" id="uc-03"><span class="secno">3.3. </span><span class="content">UC-03: Web-based UI for home appliances (input/output constrained devices)</span><a class="self-link" href="#uc-03"></a></h3>
-   <p>A user controls home appliances (e.g. air conditioner, microwave oven, refrigerator) with an online GUI service on the internet.
-The home appliances are designed natively to be used via the online GUI loaded in a browser on her smartphone or tablet.
-As with the use cases mentioned above, when she signs in to the online service, the service finds a home appliance through the browser.
-Under her approval, the service can be granted access privileges for the appliance and she can control it through the GUI service.</p>
-   <p>!<a href="figs/uc03.jpg">uc03</a></p>
-   <h3 class="heading settled" data-level="3.4" id="uc-04"><span class="secno">3.4. </span><span class="content">UC-04: Embedded system monitoring and controlling for display-capable devices</span><a class="self-link" href="#uc-04"></a></h3>
-   <p>A field engineer of a digital signage service provider sets up an internet-capable display device.
-The engineer makes the device display a specific website as a signage content by using a browser on the device.
-After that, the website is monitoring the status of the embedded system (e.g. collecting logs, monitoring system resource utilization)
-continuously via the browser by using internal REST APIs provided by an internal web server (e.g. https://localhost) of the device.
-If the device provides the website with reboot functionality as one of the REST APIs, the service provider is able to not only check
-the health of the device, if necessary, but also reboot the device remotely via the website. This use case is about Network based API described in <a href="NetworkBasedAPI.md">NetworkedBasedAPI.md</a></p>
-   <p>!<a href="figs/uc04.jpg">uc04</a></p>
-   <h3 class="heading settled" data-level="3.5" id="uc-05"><span class="secno">3.5. </span><span class="content">UC-05: Data analysis from analytical and measuring instruments in local network</span><a class="self-link" href="#uc-05"></a></h3>
-   <p>An analytical and measuring instrument in local network outputs a large amount of raw data as the result of an experiment.
-An experimenter (a user of the instrument) signs in to a web-based analytical service provided by the vender of the instrument by using a browser in her PC.
-The experimenter analyzes the raw data by using the web service and the service fetches the raw data from the instrument directly in local network.</p>
-   <p>!<a href="figs/uc05.jpg">uc05</a></p>
-   <h3 class="heading settled" data-level="3.6" id="uc-06"><span class="secno">3.6. </span><span class="content">UC-06: Secure offline communication for home automation</span><a class="self-link" href="#uc-06"></a></h3>
-   <p>A user sets up a home automation gateway is under normal circumstances using HTTPS to securely accept commands via a remote server.
-In some cases the gateways internet connection is interrupted but local communication between a wall mounted control surface, app, or similar should stil be given.
-This becomes very important when we consider that devices that can be controlled this way include door locks and security cameras.</p>
-   <h3 class="heading settled" data-level="3.7" id="uc-07"><span class="secno">3.7. </span><span class="content">UC-07: Companion Device for Broadcast Interactive Service</span><a class="self-link" href="#uc-07"></a></h3>
-   <p>A user is watching a broadcast interactive service which is enhanced by a broadcaster’s web app running on the user agent of TV. The user hands a companion device, e.g.  Smartphone, and launches a user agent with the Frontend page from the broadcaster web server. The Frontend page discovers the user-agent of TV and securely communicates with the broadcaster’s web application via the Web Socket Server on TV in order to provide GUI for the interactive broadcast service. Note that this use case is similar to the 2-UA of the Presentation API but the difference is that the broadcaster’s web application on TV is running on UA of TV in advance.</p>
-   <p>!<a href="figs/uc07.jpg">uc07</a></p>
-   <h3 class="heading settled" data-level="3.8" id="uc-08"><span class="secno">3.8. </span><span class="content">UC-08: Presenting with Projector at office</span><a class="self-link" href="#uc-08"></a></h3>
-   <p>A user is attending a meeting at office (outside home). The user logs on an online document sharing service on PC and present his document file on the service with the Projector connected via local network. FrontEnd page on UA1 at PC initiates to launch 2nd frontend page on 2nd UA at the projector to let the 2nd frontend page present the document.  Note that this use case is similar to 2-UA of Presentation API but the communication between 2-UA should be secured to prevent the MITM attack in the local network and also the regular WebSocket API is used for the communication, e.g. file transfer.</p>
-   <p>!<a href="figs/uc08.jpg">uc08</a></p>
+   <h3 class="heading settled" data-level="3.1" id="uc-1"><span class="secno">3.1. </span><span class="content">UC-1: Photo sharing between online services and home NAS devices</span><a class="self-link" href="#uc-1"></a></h3>
+   <p>A user usually stores her private photos and videos in a home NAS device. She
+opens an online photo sharing service in a browser on her smartphone. The online
+service finds her home NAS device through the browser and shows her the NAS via
+a popup window. She selects the NAS and the browser shows her private photos in
+the NAS as well as the ones already stored in the online service. She then
+selects and posts some photos that she would like to share with her friends or,
+if she usually posts photos to the online service from her smartphone directly,
+she downloads the photos and posts them to the NAS device.</p>
+   <figure id="fig-uc01"><img src="figs/uc01.jpg"></figure>
+   <h3 class="heading settled" data-level="3.2" id="uc-2"><span class="secno">3.2. </span><span class="content">UC-2: Video streaming with cache storage in local network</span><a class="self-link" href="#uc-2"></a></h3>
+   <p>A user has a video cache storage server for home to enjoy online video streaming
+services at UHDTV quality. When she opens the web site of one of the streaming
+services on her TV browser, the web page tries to find her cache storage and
+displays a list of storages via a popup window. She picks up one storage from
+the list to store caches of UHDTV video stream segments. After her permission,
+the streaming web application of the service can start prefetching or fetching
+UHDTV movies purchased or bookmarked by her and upload those segments to the
+storage. When she wants to watch one of the movies cached in the storage, the
+online service fetches the movie from the home storage to avoid consuming WAN
+traffic, and finally she can comfortably enjoy the movie.</p>
+   <figure id="fig-uc02"><img src="figs/uc02.jpg"></figure>
+   <h3 class="heading settled" data-level="3.3" id="uc-3"><span class="secno">3.3. </span><span class="content">UC-3: Web-based UI for home appliances (input/output constrained devices)</span><a class="self-link" href="#uc-3"></a></h3>
+   <p>A user controls home appliances (e.g. air conditioner, microwave oven,
+refrigerator) with an online GUI service on the internet. The home appliances
+are designed natively to be used via the online GUI loaded in a browser on her
+smartphone or tablet. As with the use cases mentioned above, when she signs in
+to the online service, the service finds a home appliance through the browser.
+Under her approval, the service can be granted access privileges for the
+appliance and she can control it through the GUI service.</p>
+   <figure id="fig-uc03"><img src="figs/uc03.jpg"></figure>
+   <h3 class="heading settled" data-level="3.4" id="uc-4"><span class="secno">3.4. </span><span class="content">UC-4: Embedded system monitoring and controlling for display-capable devices</span><a class="self-link" href="#uc-4"></a></h3>
+   <p>A field engineer of a digital signage service provider sets up an
+internet-capable display device. The engineer makes the device display a
+specific website as a signage content by using a browser on the device. After
+that, the website is monitoring the status of the embedded system (e.g.
+collecting logs, monitoring system resource utilization) continuously via the
+browser by using internal REST APIs provided by an internal web server (e.g.
+https://localhost) of the device. If the device provides the website with reboot
+functionality as one of the REST APIs, the service provider is able to not only
+check the health of the device, if necessary, but also reboot the device
+remotely via the website.</p>
+   <figure id="fig-uc04"><img src="figs/uc04.jpg"></figure>
+   <h3 class="heading settled" data-level="3.5" id="uc-5"><span class="secno">3.5. </span><span class="content">UC-5: Data analysis from analytical and measuring instruments in local network</span><a class="self-link" href="#uc-5"></a></h3>
+   <p>An analytical and measuring instrument in local network outputs a large amount
+of raw data as the result of an experiment. An experimenter (a user of the
+instrument) signs in to a web-based analytical service provided by the vender of
+the instrument by using a browser in her PC. The experimenter analyzes the raw
+data by using the web service and the service fetches the raw data from the
+instrument directly in local network.</p>
+   <figure id="fig-uc05"><img src="figs/uc05.jpg"></figure>
+   <h3 class="heading settled" data-level="3.6" id="uc-6"><span class="secno">3.6. </span><span class="content">UC-6: Secure offline communication for home automation</span><a class="self-link" href="#uc-6"></a></h3>
+   <p>A user wants to set up a new home device (e.g., a Wi-Fi access point/router,
+home automation gateway) in his/her home via its web interface.
+User typically opens a given URL for the device (e.g., https://home-router.local, or https://192.168.1.1)
+in a laptop or smart phone’s web browser. Since the new device does not have
+a valid web PKI certificate, the web browser displays a warning like
+“The connection is not secure” but provides an option to ask the user to
+approve the access or add the URL as an exception to the whitelist.
+Once user takes the action, the web browser treats the device as a trusted one
+and does not display the warning in subsequent attempts. Additionally, if the
+home device supports functionality such as, SSO (Single Sign-On) the user can
+use an identity (ID) provider’s account (e.g., Google, Facebook, and so on)
+to sign in the device’s web interface and provide the needed trust.</p>
+   <p>Similar secure access is required when a home gateway, which is typically
+controlling other home devices (e.g., door locks, security cameras),
+uses HTTPS for securely accepting commands via a remote server.
+However, when a home gateway happens to get temporarily disconnected
+from the internet, those home devices become inaccessible.
+In such scenarios, a local HTTPS communication from user’s
+local device (e.g., smart phone or a control device) is essential to control
+and operate the home devices directly through HTTPS connections over the local network.</p>
+   <h3 class="heading settled" data-level="3.7" id="uc-7"><span class="secno">3.7. </span><span class="content">UC-7: Companion Device for Broadcast Interactive Service</span><a class="self-link" href="#uc-7"></a></h3>
+   <p>A user is watching a broadcast interactive service which is enhanced by a
+broadcaster’s web app running on the user agent of TV. The user hands a
+companion device, e.g. Smartphone, and launches a user agent with the Frontend
+page from the broadcaster web server. The Frontend page discovers the user-agent
+of TV and securely communicates with the broadcaster’s web application via the
+Web Socket Server on TV in order to provide GUI for the interactive broadcast
+service. Note that this use case is similar to the 2-UA of the Presentation API
+but the difference is that the broadcaster’s web application on TV is running on
+UA of TV in advance.</p>
+   <figure id="fig-uc07"><img src="figs/uc07.jpg"></figure>
+   <h3 class="heading settled" data-level="3.8" id="uc-8"><span class="secno">3.8. </span><span class="content">UC-8: Presenting with Projector at office</span><a class="self-link" href="#uc-8"></a></h3>
+   <p>A user is attending a meeting at office (outside home). The user logs on an
+online document sharing service on PC and present his document file on the
+service with the Projector connected via local network. FrontEnd page on UA1 at
+PC initiates to launch 2nd frontend page on 2nd UA at the projector to let the
+2nd frontend page present the document. Note that this use case is similar to
+2-UA of Presentation API but the communication between 2-UA should be secured to
+prevent the MITM attack in the local network and also the regular WebSocket API
+is used for the communication, e.g. file transfer.</p>
+   <figure id="fig-uc08"><img src="figs/uc08.jpg"></figure>
    <h2 class="heading settled" data-level="4" id="requirements"><span class="secno">4. </span><span class="content">Requirements</span><a class="self-link" href="#requirements"></a></h2>
    <p>This section outlines functional and non-functional requirements of HTTPS
-usage in local network represented in <a href="#usecases">§ 3 Use cases</a>.</p>
+usage in local network represented in <a href="#usecases">§3 Use cases</a>.</p>
    <p>Functional requirements consist of guarantee of device trustworthiness,
 device identification, alerting user and user consent, device discovery,
 and certificate management.</p>
@@ -1593,7 +1633,7 @@ and user experience aspects of HTTPS usage in local network.</p>
      <p>Device Discovery</p>
    </ul>
    <p>In the following, we elaborate on individual requirements as mentioned above.</p>
-   <h4 class="heading settled" data-level="4.1.1" id="req-guarantee-of-device-trustworthiness"><span class="secno">4.1.1. </span><span class="content">Guarantee of Device Trustworthiness</span><a class="self-link" href="#req-guarantee-of-device-trustworthiness"></a></h4>
+   <h4 class="heading settled" data-level="4.1.1" id="req-guarantee-of-device-trustworthiness"><span class="secno">4.1.1. </span><span class="content">REQ-1: Guarantee of Device Trustworthiness</span><a class="self-link" href="#req-guarantee-of-device-trustworthiness"></a></h4>
    <p>The <a data-link-type="dfn" href="#ua" id="ref-for-ua⑤">UA</a> accesses the <a data-link-type="dfn" href="#device" id="ref-for-device①">device</a> with TLS (HTTPS or WSS) in all of the use cases envisioned so far.
 If the <a data-link-type="dfn" href="#ua" id="ref-for-ua⑥">UA</a> cannot trust the <a data-link-type="dfn" href="#device" id="ref-for-device②">device</a>’s TLS server certificate,
 the <a data-link-type="dfn" href="#ua" id="ref-for-ua⑦">UA</a> shows a warning message that means the <a data-link-type="dfn" href="#device" id="ref-for-device③">device</a> cannot be trusted.
@@ -1611,29 +1651,29 @@ privacy concerns. In such scenarios, it is better not to use the <a data-link-ty
 however, the <a data-link-type="dfn" href="#device" id="ref-for-device⑨">device</a> and/or the <a data-link-type="dfn" href="#ua" id="ref-for-ua⑨">UA</a> shall have one of the following features or methods:</p>
    <ul>
     <li data-md>
-     <p>The <a data-link-type="dfn" href="#device" id="ref-for-device①⓪">device</a> has a way to obtain and use a <a data-link-type="dfn" href="#non-web-pki-certificate" id="ref-for-non-web-pki-certificate②">non-Web PKI certificate</a> and
+     <p>REQ-1-1: The <a data-link-type="dfn" href="#device" id="ref-for-device①⓪">device</a> has a way to obtain and use a <a data-link-type="dfn" href="#non-web-pki-certificate" id="ref-for-non-web-pki-certificate②">non-Web PKI certificate</a> and
 the <a data-link-type="dfn" href="#ua" id="ref-for-ua①⓪">UA</a> has some out-of-band mechanisms to validate the certificate as a trusted one
 (e.g., the user and/or the web service’s approval).</p>
     <li data-md>
-     <p>The <a data-link-type="dfn" href="#device" id="ref-for-device①①">device</a> does not have a certificate but the <a data-link-type="dfn" href="#ua" id="ref-for-ua①①">UA</a> has a way to validate
+     <p>REQ-1-2: The <a data-link-type="dfn" href="#device" id="ref-for-device①①">device</a> does not have a certificate but the <a data-link-type="dfn" href="#ua" id="ref-for-ua①①">UA</a> has a way to validate
 and trust the <a data-link-type="dfn" href="#device" id="ref-for-device①②">device</a> without any certificates (e.g., by using a PSK (pre-shared key)
 or an RPK (raw public key)), which is shared to the <a data-link-type="dfn" href="#ua" id="ref-for-ua①②">UA</a> in a secure way.</p>
    </ul>
-   <h4 class="heading settled" data-level="4.1.2" id="req-device-identification"><span class="secno">4.1.2. </span><span class="content"><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="device-identification">Device Identification</dfn></span><a class="self-link" href="#req-device-identification"></a></h4>
-   <p>In case that the user inputs the device URL to the address bar of the <a data-link-type="dfn" href="#ua" id="ref-for-ua①③">UA</a> directly (<a href="#uc-06">§ 3.6 UC-06: Secure offline communication for home automation</a>)
-or the <a data-link-type="dfn" href="#ua" id="ref-for-ua①④">UA</a> shows the popup window to the user to get the user’s consent (<a href="#uc-02">§ 3.2 UC-02: Video streaming with cache storage in local network</a>, <a href="#uc-03">§ 3.3 UC-03: Web-based UI for home appliances (input/output constrained devices)</a>),
+   <h4 class="heading settled" data-level="4.1.2" id="req-device-identification"><span class="secno">4.1.2. </span><span class="content">REQ-2: <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="device-identification">Device Identification</dfn></span><a class="self-link" href="#req-device-identification"></a></h4>
+   <p>In case that the user inputs the device URL to the address bar of the <a data-link-type="dfn" href="#ua" id="ref-for-ua①③">UA</a> directly (<a href="#uc-6">§3.6 UC-6: Secure offline communication for home automation</a>)
+or the <a data-link-type="dfn" href="#ua" id="ref-for-ua①④">UA</a> shows the popup window to the user to get the user’s consent (<a href="#uc-2">§3.2 UC-2: Video streaming with cache storage in local network</a>, <a href="#uc-3">§3.3 UC-3: Web-based UI for home appliances (input/output constrained devices)</a>),
 the user may be able to recognize that the device URL displayed or input on the <a data-link-type="dfn" href="#ua" id="ref-for-ua①⑤">UA</a> indicates the real device on the local network. In such cases, the <a data-link-type="dfn" href="#device" id="ref-for-device①③">device</a> and/or
 the <a data-link-type="dfn" href="#ua" id="ref-for-ua①⑥">UA</a> shall meet the following requirements:</p>
    <ul>
     <li data-md>
-     <p>The device identifier (domain name) should be easy to remember and short enough but
+     <p>REQ-2-1: The device identifier (domain name) should be easy to remember and short enough but
 not to recognize as fraudulent by anti-phishing.</p>
     <li data-md>
-     <p>The <a data-link-type="dfn" href="#device" id="ref-for-device①④">device</a> and the <a data-link-type="dfn" href="#ua" id="ref-for-ua①⑦">UA</a> should have a pairing method by using the device
+     <p>REQ-2-2: The <a data-link-type="dfn" href="#device" id="ref-for-device①④">device</a> and the <a data-link-type="dfn" href="#ua" id="ref-for-ua①⑦">UA</a> should have a pairing method by using the device
 interface (e.g., pushing a specific button on the <a data-link-type="dfn" href="#device" id="ref-for-device①⑤">device</a> to start the pairing,
 showing the PIN code for the pairing on the <a data-link-type="dfn" href="#device" id="ref-for-device①⑥">device</a>’s display).</p>
    </ul>
-   <h4 class="heading settled" data-level="4.1.3" id="req-alerting-user"><span class="secno">4.1.3. </span><span class="content">Alerting User and User Consent</span><a class="self-link" href="#req-alerting-user"></a></h4>
+   <h4 class="heading settled" data-level="4.1.3" id="req-alerting-user"><span class="secno">4.1.3. </span><span class="content">REQ-3: Alerting User and User Consent</span><a class="self-link" href="#req-alerting-user"></a></h4>
    <p>The frontend of the <a data-link-type="dfn" href="#web-service" id="ref-for-web-service">web service</a> loaded on the <a data-link-type="dfn" href="#ua" id="ref-for-ua①⑧">UA</a> should not be able to access the <a data-link-type="dfn" href="#device" id="ref-for-device①⑦">device</a> without an explicit approval from the user especially during its first time access.
 This is essential in cases where the <a data-link-type="dfn" href="#device" id="ref-for-device①⑧">device</a> is not capable of using a <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate⑥">Web PKI certificate</a>.
 In such cases, the <a data-link-type="dfn" href="#ua" id="ref-for-ua①⑨">UA</a> will possibly use an alternative identifier (e.g., <a data-link-type="dfn" href="#non-web-pki-certificate" id="ref-for-non-web-pki-certificate③">non-Web PKI certificate</a>, PSK, RPK)
@@ -1641,36 +1681,36 @@ but it must not be trusted without the user’s consent.
 Therefore, considering the <a data-link-type="dfn" href="#ua" id="ref-for-ua②⓪">UA</a> shall meet the following requirement:</p>
    <ul>
     <li data-md>
-     <p>When the frontend of the <a data-link-type="dfn" href="#web-service" id="ref-for-web-service①">web service</a> requests the <a data-link-type="dfn" href="#ua" id="ref-for-ua②①">UA</a> to access the <a data-link-type="dfn" href="#device" id="ref-for-device①⑨">device</a> in local network,
+     <p>REQ-3-1: When the frontend of the <a data-link-type="dfn" href="#web-service" id="ref-for-web-service①">web service</a> requests the <a data-link-type="dfn" href="#ua" id="ref-for-ua②①">UA</a> to access the <a data-link-type="dfn" href="#device" id="ref-for-device①⑨">device</a> in local network,
 the <a data-link-type="dfn" href="#ua" id="ref-for-ua②②">UA</a> shall show a popup window to obtain the user’s consent and shall permit
 the access only if the user approve the access.</p>
     <li data-md>
-     <p>When the <a data-link-type="dfn" href="#device" id="ref-for-device②⓪">device</a> does not use a <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate⑦">Web PKI certificate</a> for HTTPS communication,
+     <p>REQ-3-2: When the <a data-link-type="dfn" href="#device" id="ref-for-device②⓪">device</a> does not use a <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate⑦">Web PKI certificate</a> for HTTPS communication,
 the <a data-link-type="dfn" href="#ua" id="ref-for-ua②③">UA</a> shall have a way to obtain user’s consent to trust an alternative identifier
 (e.g., <a data-link-type="dfn" href="#non-web-pki-certificate" id="ref-for-non-web-pki-certificate④">non-Web PKI certificate</a>, PSK, RPK).</p>
    </ul>
-   <h4 class="heading settled" data-level="4.1.4" id="req-certificate-management"><span class="secno">4.1.4. </span><span class="content">Certificate Management</span><a class="self-link" href="#req-certificate-management"></a></h4>
+   <h4 class="heading settled" data-level="4.1.4" id="req-certificate-management"><span class="secno">4.1.4. </span><span class="content">REQ-4: Certificate Management</span><a class="self-link" href="#req-certificate-management"></a></h4>
    <p>When the <a data-link-type="dfn" href="#device" id="ref-for-device②①">device</a> obtains a TLS server certificate for HTTPS communication,
 the <a data-link-type="dfn" href="#ca" id="ref-for-ca">CA</a>, <a data-link-type="dfn" href="#ua" id="ref-for-ua②④">UA</a> and the <a data-link-type="dfn" href="#device" id="ref-for-device②②">device</a> shall meet the following requirements:</p>
    <ul>
     <li data-md>
-     <p>The <a data-link-type="dfn" href="#ca" id="ref-for-ca①">CA</a> that issues certificates for <a data-link-type="dfn" href="#device" id="ref-for-device②③">device</a>s shall be able to revoke the certificates.</p>
+     <p>REQ-4-1: The <a data-link-type="dfn" href="#ca" id="ref-for-ca①">CA</a> that issues certificates for <a data-link-type="dfn" href="#device" id="ref-for-device②③">devices</a> shall be able to revoke the certificates.</p>
     <li data-md>
-     <p>The <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑤">UA</a> shall be able to detect the revocation of the <a data-link-type="dfn" href="#device" id="ref-for-device②④">device</a>’s certificate.</p>
+     <p>REQ-4-2: The <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑤">UA</a> shall be able to detect the revocation of the <a data-link-type="dfn" href="#device" id="ref-for-device②④">device</a>’s certificate.</p>
     <li data-md>
-     <p>The <a data-link-type="dfn" href="#device" id="ref-for-device②⑤">device</a> shall be able to refresh the certificate at any time.</p>
+     <p>REQ-4-3: The <a data-link-type="dfn" href="#device" id="ref-for-device②⑤">device</a> shall be able to refresh the certificate at any time.</p>
    </ul>
-   <h4 class="heading settled" data-level="4.1.5" id="req-device-discovery"><span class="secno">4.1.5. </span><span class="content"><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="device-discovery">Device Discovery</dfn> (optional)</span><a class="self-link" href="#req-device-discovery"></a></h4>
-   <p>As described in <a href="#uc-02">§ 3.2 UC-02: Video streaming with cache storage in local network</a> and <a href="#uc-03">§ 3.3 UC-03: Web-based UI for home appliances (input/output constrained devices)</a>, when the <a data-link-type="dfn" href="#web-service" id="ref-for-web-service②">web service</a> does not know the device URL in advance,
+   <h4 class="heading settled" data-level="4.1.5" id="req-device-discovery"><span class="secno">4.1.5. </span><span class="content">REQ-5: <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="device-discovery">Device Discovery</dfn> (optional)</span><a class="self-link" href="#req-device-discovery"></a></h4>
+   <p>As described in <a href="#uc-2">§3.2 UC-2: Video streaming with cache storage in local network</a> and <a href="#uc-3">§3.3 UC-3: Web-based UI for home appliances (input/output constrained devices)</a>, when the <a data-link-type="dfn" href="#web-service" id="ref-for-web-service②">web service</a> does not know the device URL in advance,
 the <a data-link-type="dfn" href="#device" id="ref-for-device②⑥">device</a> needs to be discovered. That means, if device discovery were to be implemented, the process must meet the following requirements:</p>
    <ul>
     <li data-md>
-     <p>The <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑥">UA</a> shall be able to discover the presence of <a data-link-type="dfn" href="#device" id="ref-for-device②⑦">device</a>s in the same local network.</p>
+     <p>REQ-5-1: The <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑥">UA</a> shall be able to discover the presence of <a data-link-type="dfn" href="#device" id="ref-for-device②⑦">devices</a> in the same local network.</p>
     <li data-md>
-     <p>The <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑦">UA</a> shall be able to obtain the endpoint URL of the <a data-link-type="dfn" href="#device" id="ref-for-device②⑧">device</a> that has the scheme <code>https://</code> or <code>wss://</code>.</p>
+     <p>REQ-5-2: The <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑦">UA</a> shall be able to obtain the endpoint URL of the <a data-link-type="dfn" href="#device" id="ref-for-device②⑧">device</a> that has the scheme <code>https://</code> or <code>wss://</code>.</p>
     <li data-md>
-     <p>When the <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑧">UA</a> finds multiple <a data-link-type="dfn" href="#device" id="ref-for-device②⑨">device</a>s, the <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑨">UA</a> shall be able to present the selector interface
-to display the list of the <a data-link-type="dfn" href="#device" id="ref-for-device③⓪">device</a>s and allow the user to select one specific <a data-link-type="dfn" href="#device" id="ref-for-device③①">device</a>.</p>
+     <p>REQ-5-3: When the <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑧">UA</a> finds multiple <a data-link-type="dfn" href="#device" id="ref-for-device②⑨">devices</a>, the <a data-link-type="dfn" href="#ua" id="ref-for-ua②⑨">UA</a> shall be able to present the selector interface
+to display the list of the <a data-link-type="dfn" href="#device" id="ref-for-device③⓪">devices</a> and allow the user to select one specific <a data-link-type="dfn" href="#device" id="ref-for-device③①">device</a>.</p>
    </ul>
    <h3 class="heading settled" data-level="4.2" id="req-non-funcational-req"><span class="secno">4.2. </span><span class="content">Non-Functional Requirements</span><a class="self-link" href="#req-non-funcational-req"></a></h3>
    <p>The non-functional requirements are listed below:</p>
@@ -1686,81 +1726,81 @@ to display the list of the <a data-link-type="dfn" href="#device" id="ref-for-de
     <li data-md>
      <p>User Experience</p>
    </ul>
-   <h4 class="heading settled" data-level="4.2.1" id="req-security"><span class="secno">4.2.1. </span><span class="content">Security</span><a class="self-link" href="#req-security"></a></h4>
+   <h4 class="heading settled" data-level="4.2.1" id="req-security"><span class="secno">4.2.1. </span><span class="content">REQ-6: Security</span><a class="self-link" href="#req-security"></a></h4>
    <p>It is essential to take care of the following security considerations:</p>
    <ul>
     <li data-md>
-     <p>If the <a data-link-type="dfn" href="#device" id="ref-for-device③②">device</a> uses a TLS server certificate for HTTPS communication,
+     <p>REQ-6-1: If the <a data-link-type="dfn" href="#device" id="ref-for-device③②">device</a> uses a TLS server certificate for HTTPS communication,
 the certificate issuance and renewal steps shall prevent passive network
 eavesdroppers from learning information related to the identification or certificate
 exchanged among the system components (the CA, the <a data-link-type="dfn" href="#device" id="ref-for-device③③">device</a>, the <a data-link-type="dfn" href="#ua" id="ref-for-ua③⓪">UA</a> and the <a data-link-type="dfn" href="#web-service" id="ref-for-web-service③">web service</a>).</p>
     <li data-md>
-     <p>If the <a data-link-type="dfn" href="#device" id="ref-for-device③④">device</a> uses a TLS server certificate for HTTPS communication,
+     <p>REQ-6-2: If the <a data-link-type="dfn" href="#device" id="ref-for-device③④">device</a> uses a TLS server certificate for HTTPS communication,
 the certificate issuance and renewal steps shall prevent active network attackers
 from impersonating a <a data-link-type="dfn" href="#device" id="ref-for-device③⑤">device</a> and observing or altering data intended for the <a data-link-type="dfn" href="#ca" id="ref-for-ca②">CA</a> or for the <a data-link-type="dfn" href="#ua" id="ref-for-ua③①">UA</a>.</p>
     <li data-md>
-     <p>If the <a data-link-type="dfn" href="#device" id="ref-for-device③⑥">device</a> does not use a TLS server certificate, alternate steps for the <a data-link-type="dfn" href="#ua" id="ref-for-ua③②">UA</a> to initiate a TLS session to the <a data-link-type="dfn" href="#device" id="ref-for-device③⑦">device</a> (e.g., sharing and using a PSK or a RPK)
+     <p>REQ-6-3: If the <a data-link-type="dfn" href="#device" id="ref-for-device③⑥">device</a> does not use a TLS server certificate, alternate steps for the <a data-link-type="dfn" href="#ua" id="ref-for-ua③②">UA</a> to initiate a TLS session to the <a data-link-type="dfn" href="#device" id="ref-for-device③⑦">device</a> (e.g., sharing and using a PSK or a RPK)
 shall prevent passive network eavesdroppers from getting the PSK or the private key of the RPK.</p>
     <li data-md>
-     <p>If the <a data-link-type="dfn" href="#device" id="ref-for-device③⑧">device</a> does not use a TLS server certificate, alternate steps for the <a data-link-type="dfn" href="#ua" id="ref-for-ua③③">UA</a> to initiate a TLS session to the <a data-link-type="dfn" href="#device" id="ref-for-device③⑨">device</a> (e.g., sharing and using a PSK or a RPK)
+     <p>REQ-6-4: If the <a data-link-type="dfn" href="#device" id="ref-for-device③⑧">device</a> does not use a TLS server certificate, alternate steps for the <a data-link-type="dfn" href="#ua" id="ref-for-ua③③">UA</a> to initiate a TLS session to the <a data-link-type="dfn" href="#device" id="ref-for-device③⑨">device</a> (e.g., sharing and using a PSK or a RPK)
 shall prevent active network attackers from impersonating a <a data-link-type="dfn" href="#device" id="ref-for-device④⓪">device</a> and observing or
 altering the keys for the <a data-link-type="dfn" href="#ua" id="ref-for-ua③④">UA</a>.</p>
     <li data-md>
-     <p><a data-link-type="dfn" href="#device-identification" id="ref-for-device-identification">Device identification</a> (e.g., the pairing method mentioned above) shall prevent
+     <p>REQ-6-5: <a data-link-type="dfn" href="#device-identification" id="ref-for-device-identification">Device identification</a> (e.g., the pairing method mentioned above) shall prevent
 passive network eavesdroppers from learning information related to identification.</p>
     <li data-md>
-     <p><a data-link-type="dfn" href="#device-identification" id="ref-for-device-identification①">Device identification</a> and <a data-link-type="dfn" href="#device-discovery" id="ref-for-device-discovery">device discovery</a> (if the <a data-link-type="dfn" href="#ua" id="ref-for-ua③⑤">UA</a> supports it) shall prevent
+     <p>REQ-6-6: <a data-link-type="dfn" href="#device-identification" id="ref-for-device-identification①">Device identification</a> and <a data-link-type="dfn" href="#device-discovery" id="ref-for-device-discovery">device discovery</a> (if the <a data-link-type="dfn" href="#ua" id="ref-for-ua③⑤">UA</a> supports it) shall prevent
 active network attackers from impersonating a <a data-link-type="dfn" href="#device" id="ref-for-device④①">device</a> and observing or altering
 data intended for the <a data-link-type="dfn" href="#ca" id="ref-for-ca③">CA</a> or for the <a data-link-type="dfn" href="#ua" id="ref-for-ua③⑥">UA</a>.</p>
    </ul>
-   <h4 class="heading settled" data-level="4.2.2" id="req-privacy"><span class="secno">4.2.2. </span><span class="content">Privacy</span><a class="self-link" href="#req-privacy"></a></h4>
+   <h4 class="heading settled" data-level="4.2.2" id="req-privacy"><span class="secno">4.2.2. </span><span class="content">REQ-7: Privacy</span><a class="self-link" href="#req-privacy"></a></h4>
    <p>The user privacy shall be preserved against the <a data-link-type="dfn" href="#web-service" id="ref-for-web-service④">web service</a> especially when the user
 allows the frontend of the <a data-link-type="dfn" href="#web-service" id="ref-for-web-service⑤">web service</a> to access the <a data-link-type="dfn" href="#device" id="ref-for-device④②">device</a> for private use.  In such scenarios,
 the <a data-link-type="dfn" href="#ua" id="ref-for-ua③⑦">UA</a> and the <a data-link-type="dfn" href="#device" id="ref-for-device④③">device</a> shall meet the following requirements:</p>
    <ul>
     <li data-md>
-     <p>When the <a data-link-type="dfn" href="#ua" id="ref-for-ua③⑧">UA</a> supports <a data-link-type="dfn" href="#device-discovery" id="ref-for-device-discovery①">device discovery</a> functionality mentioned above and the <a data-link-type="dfn" href="#ua" id="ref-for-ua③⑨">UA</a> finds
-multiple <a data-link-type="dfn" href="#device" id="ref-for-device④④">device</a>s, <a data-link-type="dfn" href="#ua" id="ref-for-ua④⓪">UA</a> shall disclose only one <a data-link-type="dfn" href="#device" id="ref-for-device④⑤">device</a> selected by the user.</p>
+     <p>REQ-7-1: When the <a data-link-type="dfn" href="#ua" id="ref-for-ua③⑧">UA</a> supports <a data-link-type="dfn" href="#device-discovery" id="ref-for-device-discovery①">device discovery</a> functionality mentioned above and the <a data-link-type="dfn" href="#ua" id="ref-for-ua③⑨">UA</a> finds
+multiple <a data-link-type="dfn" href="#device" id="ref-for-device④④">devices</a>, <a data-link-type="dfn" href="#ua" id="ref-for-ua④⓪">UA</a> shall disclose only one <a data-link-type="dfn" href="#device" id="ref-for-device④⑤">device</a> selected by the user.</p>
     <li data-md>
-     <p>To avoid disclosing the device name and the IP address to the internet,
+     <p>REQ-7-2: To avoid disclosing the device name and the IP address to the internet,
 the <a data-link-type="dfn" href="#device" id="ref-for-device④⑥">device</a> should be able to use a private domain name.</p>
     <li data-md>
-     <p>To avoid user tracking by means of using the <a data-link-type="dfn" href="#device" id="ref-for-device④⑦">device</a>, the evice identifier
+     <p>REQ-7-3: To avoid user tracking by means of using the <a data-link-type="dfn" href="#device" id="ref-for-device④⑦">device</a>, the evice identifier
 (e.g., a TLS server certificate for the <a data-link-type="dfn" href="#device" id="ref-for-device④⑧">device</a>) should not be static and preinstalled.
 The <a data-link-type="dfn" href="#device" id="ref-for-device④⑨">device</a> should be capable of obtaining the TLS server certificate dynamically
 for HTTPS communication during commissioning.</p>
    </ul>
-   <h4 class="heading settled" data-level="4.2.3" id="req-availability"><span class="secno">4.2.3. </span><span class="content">Availability</span><a class="self-link" href="#req-availability"></a></h4>
-   <p>In scenarios (e.g., <a href="#uc-06">§ 3.6 UC-06: Secure offline communication for home automation</a>) when the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⓪">device</a> and the <a data-link-type="dfn" href="#ua" id="ref-for-ua④①">UA</a> gets temporarily disconnected from the internet,
+   <h4 class="heading settled" data-level="4.2.3" id="req-availability"><span class="secno">4.2.3. </span><span class="content">REQ-8: Availability</span><a class="self-link" href="#req-availability"></a></h4>
+   <p>In scenarios (e.g., <a href="#uc-6">§3.6 UC-6: Secure offline communication for home automation</a>) when the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⓪">device</a> and the <a data-link-type="dfn" href="#ua" id="ref-for-ua④①">UA</a> gets temporarily disconnected from the internet,
 the <a data-link-type="dfn" href="#ua" id="ref-for-ua④②">UA</a> and the <a data-link-type="dfn" href="#device" id="ref-for-device⑤①">device</a> should be able to communicate with each other on the local network.
 Therefore, the <a data-link-type="dfn" href="#device" id="ref-for-device⑤②">device</a> and the local network system shall meet the following requirements:</p>
    <ul>
     <li data-md>
-     <p>When the <a data-link-type="dfn" href="#device" id="ref-for-device⑤③">device</a> has a private domain name (e.g., *.local, *.home.arpa)
+     <p>REQ-8-1: When the <a data-link-type="dfn" href="#device" id="ref-for-device⑤③">device</a> has a private domain name (e.g., *.local, *.home.arpa)
 or a private IP address, a <a data-link-type="dfn" href="#private-ca" id="ref-for-private-ca">private CA</a> shall be able to issue a TLS server certificate for the <a data-link-type="dfn" href="#device" id="ref-for-device⑤④">device</a>.</p>
     <li data-md>
-     <p>If the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⑤">device</a> has a public domain name, the local network system should have a way to help
+     <p>REQ-8-2: If the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⑤">device</a> has a public domain name, the local network system should have a way to help
 the <a data-link-type="dfn" href="#ua" id="ref-for-ua④③">UA</a> with resolving the public domain name without an internet connection
 (e.g., without querying a public DNS server).</p>
    </ul>
-   <h4 class="heading settled" data-level="4.2.4" id="req-scalability"><span class="secno">4.2.4. </span><span class="content">Scalability</span><a class="self-link" href="#req-scalability"></a></h4>
-   <p>If all IoT devices started using <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate⑧">Web PKI certificate</a>s for HTTPS communication,
+   <h4 class="heading settled" data-level="4.2.4" id="req-scalability"><span class="secno">4.2.4. </span><span class="content">REQ-9: Scalability</span><a class="self-link" href="#req-scalability"></a></h4>
+   <p>If all IoT devices started using <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate⑧">Web PKI certificates</a> for HTTPS communication,
 the number of certificates required will be significantly larger than the total number
 of certificates exists today for public web servers.
 Therefore, following exemption may be required:</p>
    <ul>
     <li data-md>
-     <p>If the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⑥">device</a> uses a <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate⑨">Web PKI certificate</a> for HTTPS communication,
-the <a data-link-type="dfn" href="#ca" id="ref-for-ca④">CA</a> should be exempt to preserve CT (certificate transparency) logs for the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⑦">device</a>s.</p>
+     <p>REQ-9-1: If the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⑥">device</a> uses a <a data-link-type="dfn" href="#web-pki-certificate" id="ref-for-web-pki-certificate⑨">Web PKI certificate</a> for HTTPS communication,
+the <a data-link-type="dfn" href="#ca" id="ref-for-ca④">CA</a> should be exempt to preserve CT (certificate transparency) logs for the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⑦">devices</a>.</p>
    </ul>
-   <h4 class="heading settled" data-level="4.2.5" id="req-user-experience"><span class="secno">4.2.5. </span><span class="content">User Experience</span><a class="self-link" href="#req-user-experience"></a></h4>
+   <h4 class="heading settled" data-level="4.2.5" id="req-user-experience"><span class="secno">4.2.5. </span><span class="content">REQ-10: User Experience</span><a class="self-link" href="#req-user-experience"></a></h4>
    <p>While the user interaction is required in certain scenarios, it should not be
 a hindrance to providing a better user experience. Following requirements should be considered:</p>
    <ul>
     <li data-md>
-     <p>The <a data-link-type="dfn" href="#ua" id="ref-for-ua④④">UA</a> should minimize user’s interaction for <a data-link-type="dfn" href="#device-identification" id="ref-for-device-identification②">device identification</a> as much as possible.</p>
+     <p>REQ-10-1: The <a data-link-type="dfn" href="#ua" id="ref-for-ua④④">UA</a> should minimize user’s interaction for <a data-link-type="dfn" href="#device-identification" id="ref-for-device-identification②">device identification</a> as much as possible.</p>
     <li data-md>
-     <p>If the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⑧">device</a> uses a TLS server certificate for HTTPS communication,
+     <p>REQ-10-2: If the <a data-link-type="dfn" href="#device" id="ref-for-device⑤⑧">device</a> uses a TLS server certificate for HTTPS communication,
 the procedure of certificate grant and issuance and renewal should be automated
 as much as possible so that the users' interaction can be greatly minimized.</p>
    </ul>
@@ -1941,85 +1981,85 @@ as much as possible so that the users' interaction can be greatly minimized.</p>
    <b><a href="#ua">#ua</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ua">2. Terminology</a> <a href="#ref-for-ua①">(2)</a> <a href="#ref-for-ua②">(3)</a> <a href="#ref-for-ua③">(4)</a> <a href="#ref-for-ua④">(5)</a>
-    <li><a href="#ref-for-ua⑤">4.1.1. Guarantee of Device Trustworthiness</a> <a href="#ref-for-ua⑥">(2)</a> <a href="#ref-for-ua⑦">(3)</a> <a href="#ref-for-ua⑧">(4)</a> <a href="#ref-for-ua⑨">(5)</a> <a href="#ref-for-ua①⓪">(6)</a> <a href="#ref-for-ua①①">(7)</a> <a href="#ref-for-ua①②">(8)</a>
-    <li><a href="#ref-for-ua①③">4.1.2. Device Identification</a> <a href="#ref-for-ua①④">(2)</a> <a href="#ref-for-ua①⑤">(3)</a> <a href="#ref-for-ua①⑥">(4)</a> <a href="#ref-for-ua①⑦">(5)</a>
-    <li><a href="#ref-for-ua①⑧">4.1.3. Alerting User and User Consent</a> <a href="#ref-for-ua①⑨">(2)</a> <a href="#ref-for-ua②⓪">(3)</a> <a href="#ref-for-ua②①">(4)</a> <a href="#ref-for-ua②②">(5)</a> <a href="#ref-for-ua②③">(6)</a>
-    <li><a href="#ref-for-ua②④">4.1.4. Certificate Management</a> <a href="#ref-for-ua②⑤">(2)</a>
-    <li><a href="#ref-for-ua②⑥">4.1.5. Device Discovery (optional)</a> <a href="#ref-for-ua②⑦">(2)</a> <a href="#ref-for-ua②⑧">(3)</a> <a href="#ref-for-ua②⑨">(4)</a>
-    <li><a href="#ref-for-ua③⓪">4.2.1. Security</a> <a href="#ref-for-ua③①">(2)</a> <a href="#ref-for-ua③②">(3)</a> <a href="#ref-for-ua③③">(4)</a> <a href="#ref-for-ua③④">(5)</a> <a href="#ref-for-ua③⑤">(6)</a> <a href="#ref-for-ua③⑥">(7)</a>
-    <li><a href="#ref-for-ua③⑦">4.2.2. Privacy</a> <a href="#ref-for-ua③⑧">(2)</a> <a href="#ref-for-ua③⑨">(3)</a> <a href="#ref-for-ua④⓪">(4)</a>
-    <li><a href="#ref-for-ua④①">4.2.3. Availability</a> <a href="#ref-for-ua④②">(2)</a> <a href="#ref-for-ua④③">(3)</a>
-    <li><a href="#ref-for-ua④④">4.2.5. User Experience</a>
+    <li><a href="#ref-for-ua⑤">4.1.1. REQ-1: Guarantee of Device Trustworthiness</a> <a href="#ref-for-ua⑥">(2)</a> <a href="#ref-for-ua⑦">(3)</a> <a href="#ref-for-ua⑧">(4)</a> <a href="#ref-for-ua⑨">(5)</a> <a href="#ref-for-ua①⓪">(6)</a> <a href="#ref-for-ua①①">(7)</a> <a href="#ref-for-ua①②">(8)</a>
+    <li><a href="#ref-for-ua①③">4.1.2. REQ-2: Device Identification</a> <a href="#ref-for-ua①④">(2)</a> <a href="#ref-for-ua①⑤">(3)</a> <a href="#ref-for-ua①⑥">(4)</a> <a href="#ref-for-ua①⑦">(5)</a>
+    <li><a href="#ref-for-ua①⑧">4.1.3. REQ-3: Alerting User and User Consent</a> <a href="#ref-for-ua①⑨">(2)</a> <a href="#ref-for-ua②⓪">(3)</a> <a href="#ref-for-ua②①">(4)</a> <a href="#ref-for-ua②②">(5)</a> <a href="#ref-for-ua②③">(6)</a>
+    <li><a href="#ref-for-ua②④">4.1.4. REQ-4: Certificate Management</a> <a href="#ref-for-ua②⑤">(2)</a>
+    <li><a href="#ref-for-ua②⑥">4.1.5. REQ-5: Device Discovery (optional)</a> <a href="#ref-for-ua②⑦">(2)</a> <a href="#ref-for-ua②⑧">(3)</a> <a href="#ref-for-ua②⑨">(4)</a>
+    <li><a href="#ref-for-ua③⓪">4.2.1. REQ-6: Security</a> <a href="#ref-for-ua③①">(2)</a> <a href="#ref-for-ua③②">(3)</a> <a href="#ref-for-ua③③">(4)</a> <a href="#ref-for-ua③④">(5)</a> <a href="#ref-for-ua③⑤">(6)</a> <a href="#ref-for-ua③⑥">(7)</a>
+    <li><a href="#ref-for-ua③⑦">4.2.2. REQ-7: Privacy</a> <a href="#ref-for-ua③⑧">(2)</a> <a href="#ref-for-ua③⑨">(3)</a> <a href="#ref-for-ua④⓪">(4)</a>
+    <li><a href="#ref-for-ua④①">4.2.3. REQ-8: Availability</a> <a href="#ref-for-ua④②">(2)</a> <a href="#ref-for-ua④③">(3)</a>
+    <li><a href="#ref-for-ua④④">4.2.5. REQ-10: User Experience</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="device">
    <b><a href="#device">#device</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-device">2. Terminology</a>
-    <li><a href="#ref-for-device①">4.1.1. Guarantee of Device Trustworthiness</a> <a href="#ref-for-device②">(2)</a> <a href="#ref-for-device③">(3)</a> <a href="#ref-for-device④">(4)</a> <a href="#ref-for-device⑤">(5)</a> <a href="#ref-for-device⑥">(6)</a> <a href="#ref-for-device⑦">(7)</a> <a href="#ref-for-device⑧">(8)</a> <a href="#ref-for-device⑨">(9)</a> <a href="#ref-for-device①⓪">(10)</a> <a href="#ref-for-device①①">(11)</a> <a href="#ref-for-device①②">(12)</a>
-    <li><a href="#ref-for-device①③">4.1.2. Device Identification</a> <a href="#ref-for-device①④">(2)</a> <a href="#ref-for-device①⑤">(3)</a> <a href="#ref-for-device①⑥">(4)</a>
-    <li><a href="#ref-for-device①⑦">4.1.3. Alerting User and User Consent</a> <a href="#ref-for-device①⑧">(2)</a> <a href="#ref-for-device①⑨">(3)</a> <a href="#ref-for-device②⓪">(4)</a>
-    <li><a href="#ref-for-device②①">4.1.4. Certificate Management</a> <a href="#ref-for-device②②">(2)</a> <a href="#ref-for-device②③">(3)</a> <a href="#ref-for-device②④">(4)</a> <a href="#ref-for-device②⑤">(5)</a>
-    <li><a href="#ref-for-device②⑥">4.1.5. Device Discovery (optional)</a> <a href="#ref-for-device②⑦">(2)</a> <a href="#ref-for-device②⑧">(3)</a> <a href="#ref-for-device②⑨">(4)</a> <a href="#ref-for-device③⓪">(5)</a> <a href="#ref-for-device③①">(6)</a>
-    <li><a href="#ref-for-device③②">4.2.1. Security</a> <a href="#ref-for-device③③">(2)</a> <a href="#ref-for-device③④">(3)</a> <a href="#ref-for-device③⑤">(4)</a> <a href="#ref-for-device③⑥">(5)</a> <a href="#ref-for-device③⑦">(6)</a> <a href="#ref-for-device③⑧">(7)</a> <a href="#ref-for-device③⑨">(8)</a> <a href="#ref-for-device④⓪">(9)</a> <a href="#ref-for-device④①">(10)</a>
-    <li><a href="#ref-for-device④②">4.2.2. Privacy</a> <a href="#ref-for-device④③">(2)</a> <a href="#ref-for-device④④">(3)</a> <a href="#ref-for-device④⑤">(4)</a> <a href="#ref-for-device④⑥">(5)</a> <a href="#ref-for-device④⑦">(6)</a> <a href="#ref-for-device④⑧">(7)</a> <a href="#ref-for-device④⑨">(8)</a>
-    <li><a href="#ref-for-device⑤⓪">4.2.3. Availability</a> <a href="#ref-for-device⑤①">(2)</a> <a href="#ref-for-device⑤②">(3)</a> <a href="#ref-for-device⑤③">(4)</a> <a href="#ref-for-device⑤④">(5)</a> <a href="#ref-for-device⑤⑤">(6)</a>
-    <li><a href="#ref-for-device⑤⑥">4.2.4. Scalability</a> <a href="#ref-for-device⑤⑦">(2)</a>
-    <li><a href="#ref-for-device⑤⑧">4.2.5. User Experience</a>
+    <li><a href="#ref-for-device①">4.1.1. REQ-1: Guarantee of Device Trustworthiness</a> <a href="#ref-for-device②">(2)</a> <a href="#ref-for-device③">(3)</a> <a href="#ref-for-device④">(4)</a> <a href="#ref-for-device⑤">(5)</a> <a href="#ref-for-device⑥">(6)</a> <a href="#ref-for-device⑦">(7)</a> <a href="#ref-for-device⑧">(8)</a> <a href="#ref-for-device⑨">(9)</a> <a href="#ref-for-device①⓪">(10)</a> <a href="#ref-for-device①①">(11)</a> <a href="#ref-for-device①②">(12)</a>
+    <li><a href="#ref-for-device①③">4.1.2. REQ-2: Device Identification</a> <a href="#ref-for-device①④">(2)</a> <a href="#ref-for-device①⑤">(3)</a> <a href="#ref-for-device①⑥">(4)</a>
+    <li><a href="#ref-for-device①⑦">4.1.3. REQ-3: Alerting User and User Consent</a> <a href="#ref-for-device①⑧">(2)</a> <a href="#ref-for-device①⑨">(3)</a> <a href="#ref-for-device②⓪">(4)</a>
+    <li><a href="#ref-for-device②①">4.1.4. REQ-4: Certificate Management</a> <a href="#ref-for-device②②">(2)</a> <a href="#ref-for-device②③">(3)</a> <a href="#ref-for-device②④">(4)</a> <a href="#ref-for-device②⑤">(5)</a>
+    <li><a href="#ref-for-device②⑥">4.1.5. REQ-5: Device Discovery (optional)</a> <a href="#ref-for-device②⑦">(2)</a> <a href="#ref-for-device②⑧">(3)</a> <a href="#ref-for-device②⑨">(4)</a> <a href="#ref-for-device③⓪">(5)</a> <a href="#ref-for-device③①">(6)</a>
+    <li><a href="#ref-for-device③②">4.2.1. REQ-6: Security</a> <a href="#ref-for-device③③">(2)</a> <a href="#ref-for-device③④">(3)</a> <a href="#ref-for-device③⑤">(4)</a> <a href="#ref-for-device③⑥">(5)</a> <a href="#ref-for-device③⑦">(6)</a> <a href="#ref-for-device③⑧">(7)</a> <a href="#ref-for-device③⑨">(8)</a> <a href="#ref-for-device④⓪">(9)</a> <a href="#ref-for-device④①">(10)</a>
+    <li><a href="#ref-for-device④②">4.2.2. REQ-7: Privacy</a> <a href="#ref-for-device④③">(2)</a> <a href="#ref-for-device④④">(3)</a> <a href="#ref-for-device④⑤">(4)</a> <a href="#ref-for-device④⑥">(5)</a> <a href="#ref-for-device④⑦">(6)</a> <a href="#ref-for-device④⑧">(7)</a> <a href="#ref-for-device④⑨">(8)</a>
+    <li><a href="#ref-for-device⑤⓪">4.2.3. REQ-8: Availability</a> <a href="#ref-for-device⑤①">(2)</a> <a href="#ref-for-device⑤②">(3)</a> <a href="#ref-for-device⑤③">(4)</a> <a href="#ref-for-device⑤④">(5)</a> <a href="#ref-for-device⑤⑤">(6)</a>
+    <li><a href="#ref-for-device⑤⑥">4.2.4. REQ-9: Scalability</a> <a href="#ref-for-device⑤⑦">(2)</a>
+    <li><a href="#ref-for-device⑤⑧">4.2.5. REQ-10: User Experience</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="web-service">
    <b><a href="#web-service">#web-service</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-web-service">4.1.3. Alerting User and User Consent</a> <a href="#ref-for-web-service①">(2)</a>
-    <li><a href="#ref-for-web-service②">4.1.5. Device Discovery (optional)</a>
-    <li><a href="#ref-for-web-service③">4.2.1. Security</a>
-    <li><a href="#ref-for-web-service④">4.2.2. Privacy</a> <a href="#ref-for-web-service⑤">(2)</a>
+    <li><a href="#ref-for-web-service">4.1.3. REQ-3: Alerting User and User Consent</a> <a href="#ref-for-web-service①">(2)</a>
+    <li><a href="#ref-for-web-service②">4.1.5. REQ-5: Device Discovery (optional)</a>
+    <li><a href="#ref-for-web-service③">4.2.1. REQ-6: Security</a>
+    <li><a href="#ref-for-web-service④">4.2.2. REQ-7: Privacy</a> <a href="#ref-for-web-service⑤">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="web-pki-certificate">
    <b><a href="#web-pki-certificate">#web-pki-certificate</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-web-pki-certificate">2. Terminology</a> <a href="#ref-for-web-pki-certificate①">(2)</a>
-    <li><a href="#ref-for-web-pki-certificate②">4.1.1. Guarantee of Device Trustworthiness</a> <a href="#ref-for-web-pki-certificate③">(2)</a> <a href="#ref-for-web-pki-certificate④">(3)</a> <a href="#ref-for-web-pki-certificate⑤">(4)</a>
-    <li><a href="#ref-for-web-pki-certificate⑥">4.1.3. Alerting User and User Consent</a> <a href="#ref-for-web-pki-certificate⑦">(2)</a>
-    <li><a href="#ref-for-web-pki-certificate⑧">4.2.4. Scalability</a> <a href="#ref-for-web-pki-certificate⑨">(2)</a>
+    <li><a href="#ref-for-web-pki-certificate②">4.1.1. REQ-1: Guarantee of Device Trustworthiness</a> <a href="#ref-for-web-pki-certificate③">(2)</a> <a href="#ref-for-web-pki-certificate④">(3)</a> <a href="#ref-for-web-pki-certificate⑤">(4)</a>
+    <li><a href="#ref-for-web-pki-certificate⑥">4.1.3. REQ-3: Alerting User and User Consent</a> <a href="#ref-for-web-pki-certificate⑦">(2)</a>
+    <li><a href="#ref-for-web-pki-certificate⑧">4.2.4. REQ-9: Scalability</a> <a href="#ref-for-web-pki-certificate⑨">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="non-web-pki-certificate">
    <b><a href="#non-web-pki-certificate">#non-web-pki-certificate</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-non-web-pki-certificate">2. Terminology</a> <a href="#ref-for-non-web-pki-certificate①">(2)</a>
-    <li><a href="#ref-for-non-web-pki-certificate②">4.1.1. Guarantee of Device Trustworthiness</a>
-    <li><a href="#ref-for-non-web-pki-certificate③">4.1.3. Alerting User and User Consent</a> <a href="#ref-for-non-web-pki-certificate④">(2)</a>
+    <li><a href="#ref-for-non-web-pki-certificate②">4.1.1. REQ-1: Guarantee of Device Trustworthiness</a>
+    <li><a href="#ref-for-non-web-pki-certificate③">4.1.3. REQ-3: Alerting User and User Consent</a> <a href="#ref-for-non-web-pki-certificate④">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="ca">
    <b><a href="#ca">#ca</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ca">4.1.4. Certificate Management</a> <a href="#ref-for-ca①">(2)</a>
-    <li><a href="#ref-for-ca②">4.2.1. Security</a> <a href="#ref-for-ca③">(2)</a>
-    <li><a href="#ref-for-ca④">4.2.4. Scalability</a>
+    <li><a href="#ref-for-ca">4.1.4. REQ-4: Certificate Management</a> <a href="#ref-for-ca①">(2)</a>
+    <li><a href="#ref-for-ca②">4.2.1. REQ-6: Security</a> <a href="#ref-for-ca③">(2)</a>
+    <li><a href="#ref-for-ca④">4.2.4. REQ-9: Scalability</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="private-ca">
    <b><a href="#private-ca">#private-ca</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-private-ca">4.2.3. Availability</a>
+    <li><a href="#ref-for-private-ca">4.2.3. REQ-8: Availability</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="device-identification">
    <b><a href="#device-identification">#device-identification</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-device-identification">4.2.1. Security</a> <a href="#ref-for-device-identification①">(2)</a>
-    <li><a href="#ref-for-device-identification②">4.2.5. User Experience</a>
+    <li><a href="#ref-for-device-identification">4.2.1. REQ-6: Security</a> <a href="#ref-for-device-identification①">(2)</a>
+    <li><a href="#ref-for-device-identification②">4.2.5. REQ-10: User Experience</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="device-discovery">
    <b><a href="#device-discovery">#device-discovery</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-device-discovery">4.2.1. Security</a>
-    <li><a href="#ref-for-device-discovery①">4.2.2. Privacy</a>
+    <li><a href="#ref-for-device-discovery">4.2.1. REQ-6: Security</a>
+    <li><a href="#ref-for-device-discovery①">4.2.2. REQ-7: Privacy</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
