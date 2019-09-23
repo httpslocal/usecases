@@ -1,7 +1,10 @@
-# Use Cases
+# Use Cases and Requirements on HTTPS-enabled Local Network Servers
 
-In this repository we would like to collect use cases where browsers communicate with web-server-capable
-via HTTP and/or WebSocket over TLS, for the purpose of clarifying network and security requirements.
+This repository is used to solicit use cases where browsers communicate with HTTPS servers in local network,
+for the purpose of clarifying network and security requirements.
+
+Collected use cases and related requirements are sorted out and published as a Commnity Group Report,
+[Use Cases and Requirementson HTTPS-enabled Local Network Servers](https://httpslocal.github.io/usecases).
 
 ## Generating `index.html`
 
